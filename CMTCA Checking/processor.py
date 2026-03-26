@@ -3,11 +3,9 @@ import json
 import pandas as pd
 from datetime import datetime
 
-def main():
+def processor(wdir):
     # Initialize an empty DataFrame
     schedules_df = pd.DataFrame()
-
-    wdir = os.getcwd()
 
     schedules = os.listdir(f"{wdir}/data")
 
@@ -34,8 +32,9 @@ def main():
                 "MOCK CLINIC",
                 "WW F",
                 "WW S/S",
-                "Mentor",
-                "ICORD Tour",
+                "STAT"
+                #"Mentor",
+                #"ICORD Tour",
         ]
 
         rows = []
@@ -76,6 +75,29 @@ def main():
     pivot_df.to_excel("schedules_output.xlsx", index=False)
     print("Schedules exported to schedules_output.xlsx")
     print(shiftArray)
+
+
+
+def prettifier(wdir):
+    schedules = os.listdir(f"{wdir}/rawjson/")
+
+    for schedule in schedules:
+        infile = f"{wdir}/rawjson/{schedule}"
+        outfile = f"{wdir}/data/{schedule}.json"
+
+        with open(infile, "r") as f:
+            parsed = json.load(f)
+
+        # Save pretty-printed JSON
+        with open(outfile, "w") as f:
+            json.dump(parsed, f, indent=4)
+
+def main():
+    wdir = os.getcwd()
+
+    prettifier(wdir)
+
+    processor(wdir)
 
 if __name__ == "__main__":
     main()

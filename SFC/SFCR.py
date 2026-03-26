@@ -102,141 +102,144 @@ def htmlReport(problems, student_count, item_count, problem_count, time_taken):
         f.write(html)
     
     return report_path
+try:
+    #Initialize variables
 
-#Initialize variables
+    #Dictionary to store problematic student folders
+    problems = {}
+    #Count of problematic student folders
+    problemCount = 0
+    #Count of students checked
+    studentCount = 0
+    #Count of items checked
+    itemCount = 0
+    #Time at start of script
+    startTime = datetime.datetime.now()
 
-#Dictionary to store problematic student folders
-problems = {}
-#Count of problematic student folders
-problemCount = 0
-#Count of students checked
-studentCount = 0
-#Count of items checked
-itemCount = 0
-#Time at start of script
-startTime = datetime.datetime.now()
+    #Dictionary that holds the required files and their regex(search key) patterns
+    requiredFiles = {
+        "First Aid": r"First Aid",
+        "Clinic Contract": r"VCMT Clinic Internship Contract"
+    }
 
-#Dictionary that holds the required files and their regex(search key) patterns
-requiredFiles = {
-    "First Aid": r"First Aid",
-    "Clinic Contract": r"VCMT Clinic Internship Contract"
-    # old regex "\w+\s\w+\sVCMT\sClinic\sInternship\sContract\s-\s20[\d][\d]\s(Summer|Fall|Winter)"
-}
+    #compile patterns
+    patterns = {key: re.compile(pattern) for key, pattern in requiredFiles.items()}
 
-#compile patterns
-patterns = {key: re.compile(pattern) for key, pattern in requiredFiles.items()}
+    #Dictionary for the semesters and their corresponding month ranges
+    # Value format: [startin month, ending month]
+    semesterRanges = {
+        "Winter": [1, 4],
+        "Summer": [5, 8],
+        "Fall": [9, 12]
+    }
 
-#Dictionary for the semesters and their corresponding month ranges
-# Value format: [startin month, ending month]
-semesterRanges = {
-    "Winter": [1, 4],
-    "Summer": [5, 8],
-    "Fall": [9, 12]
-}
+    #T:\STUDENTS\STUDENT PERMANENT RECORDS
+    #C:\Users\declan\Documents\Coding\SFC\STUDENT PERMANENT RECORDS
 
-#T:\STUDENTS\STUDENT PERMANENT RECORDS
-#C:\Users\declan\Documents\Coding\SFC\STUDENT PERMANENT RECORDS
+    #Path to the perm records directory
+    rootDir = r"T:\STUDENTS\STUDENT PERMANENT RECORDS"
+    rootPath = Path(rootDir)
 
-#Path to the perm records directory
-rootDir = r"T:\STUDENTS\STUDENT PERMANENT RECORDS"
-rootPath = Path(rootDir)
+    #Get current Semester
+    currentMonth = datetime.datetime.now().month
+    currentSem = next(
+        semester for semester, (start, end) in semesterRanges.items()
+        if start <= currentMonth <= end
+    )
 
-#Get current Semester
-currentMonth = datetime.datetime.now().month
-currentSem = next(
-    semester for semester, (start, end) in semesterRanges.items()
-    if start <= currentMonth <= end
-)
-
-#iterating through all classes
-for classDir in rootPath.iterdir():
-    print(f"Checking {classDir.name}.")
-    #skip file if not a directory
-    if not classDir.is_dir() or re.search(r"^\d{4}\s\d(?:Summer|Fall|Winter)\s(?:FT|PT)\s-\s.*$", classDir.name) == None:
-        print(f"Skipping {classDir.name}: \n\t Incorrect formatting.")
-        continue
-
-    #extracting class info from the class directory name
-    currentClassArray = classDir.name.split(maxsplit=4)
-    currentClassStartYear = currentClassArray[0]
-    currentClassStartSem = currentClassArray[1][1:]
-    currentClassProgram = currentClassArray[2]
-
-    # Calculate how many semesters the cohort has been in clinic
-    currentSemStart = datetime.datetime.strptime(f"{datetime.datetime.now().year}-{semesterRanges[currentSem][0]}", "%Y-%m")
-    currentClassStartDate = datetime.datetime.strptime(f"{currentClassStartYear}-{semesterRanges[currentClassStartSem][0]}", "%Y-%m")
-    semSinceStart = ((currentSemStart.year - currentClassStartDate.year) * 12 + (currentSemStart.month - currentClassStartDate.month))/4 + 1
-
-    # Skip if the class is not currently in clinic
-    if (currentClassProgram == "PT" and (semSinceStart > 6 or semSinceStart < 3)) or (currentClassProgram == "FT" and (semSinceStart > 5 or semSinceStart < 2)):
-        print(f"Skipping {classDir.name}: \n\t Not currently in clinic.")
-        continue
-
-    if currentClassProgram == "PT":
-        expectedContractCount =  semSinceStart - 2
-    elif currentClassProgram == "FT":
-        expectedContractCount =  semSinceStart - 1
-    currentClassName = currentClassArray[4]
-
-    if currentClassName not in problems:
-        problems[currentClassName] = {}
-
-    # studentDir is a student's folder
-    for studentDir in classDir.iterdir():
-        print(f"Checking {studentDir.name}.")
-        if not studentDir.is_dir():
-            print(f"Skipping {studentDir.name}: \n\t Not a directory.")
+    #iterating through all classes
+    for classDir in rootPath.iterdir():
+        print(f"Checking {classDir.name}.")
+        #skip file if not a directory
+        if not classDir.is_dir() or re.search(r"^\d{4}\s\d(?:Summer|Fall|Winter)\s(?:FT|PT)\s-\s.*$", classDir.name) == None:
+            print(f"Skipping {classDir.name}: \n\t Incorrect formatting.")
             continue
 
-        contractCount = 0
-        firstAid = False
-        clinicDir = studentDir / "Clinic"
-        if not clinicDir.exists():
-            print(f"Skipping {studentDir.name}: \n\t Incorrect directory format.")
+        #extracting class info from the class directory name
+        currentClassArray = classDir.name.split(maxsplit=4)
+        currentClassStartYear = currentClassArray[0]
+        currentClassStartSem = currentClassArray[1][1:]
+        currentClassProgram = currentClassArray[2]
+
+        # Calculate how many semesters the cohort has been in clinic
+        currentSemStart = datetime.datetime.strptime(f"{datetime.datetime.now().year}-{semesterRanges[currentSem][0]}", "%Y-%m")
+        currentClassStartDate = datetime.datetime.strptime(f"{currentClassStartYear}-{semesterRanges[currentClassStartSem][0]}", "%Y-%m")
+        semSinceStart = ((currentSemStart.year - currentClassStartDate.year) * 12 + (currentSemStart.month - currentClassStartDate.month))/4 + 1
+
+        # Skip if the class is not currently in clinic
+        if (currentClassProgram == "PT" and (semSinceStart > 6 or semSinceStart < 3)) or (currentClassProgram == "FT" and (semSinceStart > 5 or semSinceStart < 2)):
+            print(f"Skipping {classDir.name}: \n\t Not currently in clinic.")
             continue
-        studentCount += 1
 
-       # item is file in a student folder
-        for item in clinicDir.iterdir():
-           for fileType, pattern in patterns.items():
-                if re.search(pattern, item.name):
-                    if fileType == "First Aid":
-                        firstAid = True
-                    elif fileType == "Clinic Contract":
-                        contractCount += 1
-        itemCount += 1
+        if currentClassProgram == "PT":
+            expectedContractCount =  semSinceStart - 2
+        elif currentClassProgram == "FT":
+            expectedContractCount =  semSinceStart - 1
+        currentClassName = currentClassArray[4]
 
-        if contractCount != expectedContractCount or not firstAid:
-            problemCount += 1
-            # Store problem details with path for HTML report
-            problems[currentClassName][studentDir.name] = {
-                "expectedContractCount": expectedContractCount,
-                "actualContractCount": contractCount,
-                "hasFirstAid": firstAid,
-                "path": clinicDir.as_uri(),  # Store the URI for the HTML link
-                "missingFiles": []
-            }
-            
-            # Add details about what's missing
-            if not firstAid:
-                problems[currentClassName][studentDir.name]["missingFiles"].append("First Aid")
-            if contractCount != expectedContractCount:
-                problems[currentClassName][studentDir.name]["missingFiles"].append(
-                    f"{abs(int(expectedContractCount - contractCount))} Clinic Contract(s)"
-                )
+        if currentClassName not in problems:
+            problems[currentClassName] = {}
 
-print("\nStudent File Checker Complete.")
-print(f"Total students checked: {studentCount}")
-print(f"Total items checked: {itemCount}")
-print(f"Total problems found: {problemCount}")
-print(f"Time taken: {datetime.datetime.now() - startTime}")
+        # studentDir is a student's folder
+        for studentDir in classDir.iterdir():
+            print(f"Checking {studentDir.name}.")
+            if not studentDir.is_dir():
+                print(f"Skipping {studentDir.name}: \n\t Not a directory.")
+                continue
 
-# Generate HTML report and open in browser
-time_taken = datetime.datetime.now() - startTime
-report_path = htmlReport(problems, studentCount, itemCount, problemCount, time_taken)
-print(f"HTML report saved to {report_path}")
+            contractCount = 0
+            firstAid = False
+            clinicDir = studentDir / "Clinic"
+            if not clinicDir.exists():
+                print(f"Skipping {studentDir.name}: \n\t Incorrect directory format.")
+                continue
+            studentCount += 1
 
-# Ask if user wants to open the report
-open_report = input("Open HTML report now? (y/n): ")
-if open_report.lower() == 'y':
-    webbrowser.open(report_path)
+            # item is file in a student folder
+            for item in clinicDir.iterdir():
+                for fileType, pattern in patterns.items():
+                    if re.search(pattern, item.name):
+                        if fileType == "First Aid":
+                            firstAid = True
+                        elif fileType == "Clinic Contract":
+                            contractCount += 1
+                itemCount += 1
+
+            if contractCount != expectedContractCount or not firstAid:
+                problemCount += 1
+                # Store problem details with path for HTML report
+                problems[currentClassName][studentDir.name] = {
+                    "expectedContractCount": expectedContractCount,
+                    "actualContractCount": contractCount,
+                    "hasFirstAid": firstAid,
+                    "path": clinicDir.as_uri(),  # Store the URI for the HTML link
+                    "missingFiles": []
+                }
+                
+                # Add details about what's missing
+                if not firstAid:
+                    problems[currentClassName][studentDir.name]["missingFiles"].append("First Aid")
+                if contractCount != expectedContractCount:
+                    problems[currentClassName][studentDir.name]["missingFiles"].append(
+                        f"{abs(int(expectedContractCount - contractCount))} Clinic Contract(s)"
+                    )
+
+    print("\nStudent File Checker Complete.")
+    print(f"Total students checked: {studentCount}")
+    print(f"Total items checked: {itemCount}")
+    print(f"Total problems found: {problemCount}")
+    print(f"Time taken: {datetime.datetime.now() - startTime}")
+
+    # Generate HTML report and open in browser
+    time_taken = datetime.datetime.now() - startTime
+    report_path = htmlReport(problems, studentCount, itemCount, problemCount, time_taken)
+    print(f"HTML report saved to {report_path}")
+
+    # Ask if user wants to open the report
+    open_report = input("Open HTML report now? (y/n): ")
+    if open_report.lower() == 'y':
+        webbrowser.open(report_path)
+
+except Exception as e:
+    print(f"Error: {e}")
+    input("press enter to continue")
