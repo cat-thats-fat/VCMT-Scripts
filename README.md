@@ -130,6 +130,51 @@ Use this when working in the Jane schedule and you want to jump forward one week
 
 ---
 
+### 4. Jane Staff Bio Paste  
+**Purpose:** Paste pre-generated staff bios with automatic ID replacement
+
+This extension helps paste a pre-generated bio (for example from Google Sheets) into the currently focused bio field on a Jane staff profile.
+
+When clicked on a Jane staff page, it reads the staff ID from the URL hash, reads clipboard text, cleans common Sheets quoting, replaces `{STAFFID}` placeholders, and inserts the result into the field you already selected.
+
+#### What it does
+- Reads the current page staff ID from `#staff/<id>`
+- Reads text from the clipboard
+- Trims outer whitespace
+- If the copied text is wrapped in one outer pair of `"..."`, removes only that pair
+- Converts doubled quotes `""` back to `"`
+- Replaces all `{STAFFID}` occurrences with the URL staff ID
+- Inserts into the currently focused editable field (`textarea`, text-like `input`, or `contenteditable`)
+- Dispatches `input` and `change` events so Jane detects the update
+
+#### Example Jane URLs
+- `https://vcmt.janeapp.com/admin#staff/1567/edit`
+- `https://themend.janeapp.com/admin#staff/1567/edit`
+
+#### Example placeholder replacement
+From clipboard text:
+
+`Student clinician profile for {STAFFID}`
+
+With URL `#staff/1567/edit`, pasted result becomes:
+
+`Student clinician profile for 1567`
+
+#### How to use
+1. Copy the formatted staff bio text
+2. Open the target Jane staff page
+3. Click into the correct bio field manually
+4. Click the extension button
+5. Review the pasted text before saving in Jane
+
+#### Important notes / limitations
+- The extension only runs when you click it (no automatic page behavior)
+- It does **not** try to find the bio field automatically
+- It does **not** auto-save, click buttons, or navigate pages
+- If no editable field is focused, if staff ID is missing from URL, or if clipboard access fails, it shows a clear alert message
+
+---
+
 ### Installing the JaneApp extensions
 
 These extensions are intended to be loaded manually in a Chromium-based browser such as Chrome or Edge.
