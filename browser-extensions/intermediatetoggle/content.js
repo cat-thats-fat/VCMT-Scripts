@@ -3,11 +3,20 @@
   const DEFAULT_TIMEOUT_MS = 20000;
   const POLL_INTERVAL_MS = 150;
 
-  // Treatment options to toggle off
-  const TREATMENTS_TO_DISABLE = [
+  // Set this to true for advanced mode, false for intermediate mode.
+  const USE_ADVANCED_MODE = false;
+
+  // Treatments that must remain disabled for each mode.
+  const INTERMEDIATE_MODE_DISABLED_TREATMENTS = [
     "Surrey student - Prebook Free",
-    "PREGNANCY MASSAGE", 
-    "ADVANCED MASSAGE"
+    "ADVANCED MASSAGE",
+    "PREGNANCY MASSAGE"
+  ];
+
+  const ADVANCED_MODE_DISABLED_TREATMENTS = [
+    "Surrey student - Prebook Free",
+    "INTERMEDIATE MASSAGE",
+    "Intermediate Massage (ORIENTATION)"
   ];
 
   let isRunning = false;
@@ -69,7 +78,7 @@
       // Wait for page to fully load
       await wait(1000);
 
-      await toggleOffTargetTreatments();
+      await applyModeTreatmentToggles();
 
       // Wait for Jane to process the changes
       await wait(2000);
@@ -110,8 +119,17 @@
     };
   }
 
-  async function toggleOffTargetTreatments() {
-    console.log(`${LOG_PREFIX} Looking for treatment options to disable...`);
+  function getDisabledTreatmentsForMode() {
+    return USE_ADVANCED_MODE
+      ? ADVANCED_MODE_DISABLED_TREATMENTS
+      : INTERMEDIATE_MODE_DISABLED_TREATMENTS;
+  }
+
+  async function applyModeTreatmentToggles() {
+    const disabledTreatments = getDisabledTreatmentsForMode();
+    const modeLabel = USE_ADVANCED_MODE ? "advanced" : "intermediate";
+    console.log(`${LOG_PREFIX} Applying ${modeLabel} mode treatment toggles...`);
+    console.log(`${LOG_PREFIX} Treatments to keep disabled:`, disabledTreatments);
     
     // Wait for treatment list to load
     await waitFor(() => {
@@ -122,48 +140,41 @@
     const treatmentItems = document.querySelectorAll('.list-group-item');
     console.log(`${LOG_PREFIX} Found ${treatmentItems.length} treatment items`);
 
-    let toggledCount = 0;
+    let toggledOnCount = 0;
+    let toggledOffCount = 0;
+    let unchangedCount = 0;
 
     for (const treatmentItem of treatmentItems) {
       const treatmentText = treatmentItem.textContent?.trim() || '';
+      const normalizedTreatmentText = normalizeText(treatmentText);
       
-      // Check if this treatment matches any of our target treatments
-      const shouldDisable = TREATMENTS_TO_DISABLE.some(targetTreatment => 
-        treatmentText.includes(targetTreatment)
+      const shouldDisable = disabledTreatments.some(targetTreatment =>
+        normalizedTreatmentText.includes(normalizeText(targetTreatment))
       );
+      const shouldEnable = !shouldDisable;
 
-      if (shouldDisable) {
-        console.log(`${LOG_PREFIX} Found target treatment: "${treatmentText}"`);
-        
-        // Look for the toggle button within this treatment item
-        const toggleBtn = treatmentItem.querySelector('.toggle-btn.on');
-        
-        if (toggleBtn) {
-          console.log(`${LOG_PREFIX} Toggling off: "${treatmentText}"`);
-          
-          // Click the toggle to turn it off
-          clickElement(toggleBtn);
-          toggledCount++;
-          
-          // Wait a bit between toggles
-          await wait(500);
-        } else {
-          // Check if it's already off
-          const toggleBtnOff = treatmentItem.querySelector('.toggle-btn.off, .toggle-btn:not(.on)');
-          if (toggleBtnOff) {
-            console.log(`${LOG_PREFIX} Treatment already disabled: "${treatmentText}"`);
-          } else {
-            console.log(`${LOG_PREFIX} No toggle button found for: "${treatmentText}"`);
-          }
-        }
+      // Look for the toggle button within this treatment item
+      const toggleBtnOn = treatmentItem.querySelector('.toggle-btn.on');
+      const toggleBtnOff = treatmentItem.querySelector('.toggle-btn.off, .toggle-btn:not(.on)');
+
+      if (shouldDisable && toggleBtnOn) {
+        console.log(`${LOG_PREFIX} Toggling off: "${treatmentText}"`);
+        clickElement(toggleBtnOn);
+        toggledOffCount++;
+        await wait(500);
+      } else if (shouldEnable && toggleBtnOff) {
+        console.log(`${LOG_PREFIX} Toggling on: "${treatmentText}"`);
+        clickElement(toggleBtnOff);
+        toggledOnCount++;
+        await wait(500);
+      } else {
+        unchangedCount++;
       }
     }
 
-    console.log(`${LOG_PREFIX} Toggled off ${toggledCount} treatments`);
-    
-    if (toggledCount === 0) {
-      console.log(`${LOG_PREFIX} No target treatments found or all were already disabled`);
-    }
+    console.log(
+      `${LOG_PREFIX} Toggle summary — on: ${toggledOnCount}, off: ${toggledOffCount}, unchanged: ${unchangedCount}`
+    );
   }
 
   async function waitForLocation(expectedUrl, timeoutMs = DEFAULT_TIMEOUT_MS) {
