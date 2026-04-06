@@ -175,6 +175,41 @@ With URL `#staff/1567/edit`, pasted result becomes:
 
 ---
 
+### 5. IntermediateToggle  
+**Purpose:** Apply treatment visibility presets by mode while moving staff-to-staff
+
+This extension opens the current staff treatment page, enforces one of three treatment modes, then advances to the next staff member.
+
+#### Modes
+Set the mode flags in `browser-extensions/intermediatetoggle/content.js`:
+
+- `USE_HYBRID_MODE = true`  
+  Enables **all** treatment types (no exclusions).
+- `USE_HYBRID_MODE = false` and `USE_ADVANCED_MODE = false` (**Intermediate mode**)  
+  Enables all treatment types **except**:
+  - `Surrey student - Prebook Free`
+  - `ADVANCED MASSAGE`
+  - `PREGNANCY MASSAGE`
+- `USE_HYBRID_MODE = false` and `USE_ADVANCED_MODE = true` (**Advanced mode**)  
+  Enables all treatment types **except**:
+  - `Surrey student - Prebook Free`
+  - `INTERMEDIATE MASSAGE`
+  - `Intermediate Massage (ORIENTATION)`
+
+#### What it does
+- Ensures you are on `#staff/<id>/treatments`
+- Applies the selected mode to treatment toggles
+- Waits for state updates
+- Navigates to `#staff/<id+1>/treatments`
+
+#### How to use
+1. Open a Jane staff page
+2. Set the desired mode booleans in `content.js`
+3. Reload the unpacked extension from `chrome://extensions`
+4. Click the extension button
+
+---
+
 ### Installing the JaneApp extensions
 
 These extensions are intended to be loaded manually in a Chromium-based browser such as Chrome or Edge.
