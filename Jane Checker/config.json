@@ -1,0 +1,21 @@
+{
+  "janeapp": {
+    "base_url": "https://vcmt.janeapp.com",
+    "default_location_id": 1
+  },
+  "files": {
+    "excel_schedule": "janechecks26.xlsx",
+    "staff_data": "staff.json",
+    "staff_mappings": "staff_mappings.json"
+  },
+  "matching": {
+    "fuzzy_threshold": 80,
+    "time_tolerance_minutes": 15
+  },
+  "excluded_shift_keywords": [
+    "on-call",
+    "outreach", 
+    "oncall",
+    "stat"
+  ]
+}

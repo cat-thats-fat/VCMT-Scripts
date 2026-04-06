@@ -1,0 +1,5 @@
+{
+  "_comment": "Manual mappings between Excel staff IDs and JaneApp staff IDs",
+  "_format": "Excel_ID maps to JaneApp_ID",
+  "_example_8002926": 1597
+}

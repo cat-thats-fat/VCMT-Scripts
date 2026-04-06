@@ -1,0 +1,3252 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>JaneApp Shift Check Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; color: #1b1b1b; }
+            .summary { background: #f6f7f8; padding: 16px; border-radius: 6px; margin-bottom: 16px; }
+            .warning { background: #fff4e5; border: 1px solid #f0b429; padding: 12px; border-radius: 6px; margin-bottom: 12px; }
+            .issue { color: #b42318; }
+            .success { color: #027a48; }
+            table { border-collapse: collapse; width: 100%; margin-top: 10px; margin-bottom: 16px; }
+            th, td { border: 1px solid #d0d5dd; padding: 8px; text-align: left; vertical-align: top; }
+            th { background-color: #f2f4f7; }
+            .section { margin-top: 18px; }
+            details { margin: 10px 0 18px 0; border: 1px solid #d0d5dd; border-radius: 6px; padding: 8px; }
+            summary { cursor: pointer; font-weight: 600; }
+            .mono { font-family: monospace; }
+        </style>
+    </head>
+    <body>
+        <h1>JaneApp Shift Check Report</h1>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p><strong>Period:</strong> 2026-07-20 to 2026-08-15</p>
+            <p><strong>Days Processed:</strong> 24/24</p>
+            <p><strong>Scheduled:</strong> 627 |
+               <strong>Jane:</strong> 842 |
+               <strong>Matched:</strong> 488 (77.8%)</p>
+            <p><strong>Missing:</strong> 139 |
+               <strong>Extra:</strong> 140 |
+               <strong>Name Issues:</strong> 0</p>
+        </div>
+    <div class="warning"><strong>Warning:</strong> High time-offset pattern detected (114 discrepancies). This may indicate systemic legend/template time drift.</div><div class="section"><h2>Top Missing Shift Codes</h2><table><tr><th>Item</th><th>Count</th></tr><tr><td>Sat PM3-2</td><td>24</td></tr><tr><td>Sat PM3-1</td><td>24</td></tr><tr><td>Sat AM2-2</td><td>24</td></tr><tr><td>Sat AM2-1</td><td>24</td></tr><tr><td>CAD #2</td><td>9</td></tr><tr><td>ADMIN PM</td><td>8</td></tr><tr><td>ADMIN AM</td><td>8</td></tr><tr><td>AM4-2</td><td>6</td></tr><tr><td>PM3-1</td><td>4</td></tr><tr><td>Sat ADMIN AM</td><td>4</td></tr><tr><td>Sat ADMIN PM</td><td>4</td></tr></table></div><div class="section"><h2>Top Affected Staff</h2><table><tr><th>Item</th><th>Count</th></tr><tr><td>Emily Iaccino</td><td>10</td></tr><tr><td>Angus Pegg</td><td>8</td></tr><tr><td>Anna Sakamoto</td><td>8</td></tr><tr><td>Anthony Aranas</td><td>8</td></tr><tr><td>Bryan Hickey</td><td>8</td></tr><tr><td>Caroline Ji</td><td>8</td></tr><tr><td>Celina Pearson</td><td>8</td></tr><tr><td>Chase Kim</td><td>8</td></tr><tr><td>Derek Bodnaruk</td><td>8</td></tr><tr><td>Emma Fonteyne</td><td>8</td></tr><tr><td>Ezrah Hynes</td><td>8</td></tr><tr><td>Joaquin Arguelles</td><td>8</td></tr><tr><td>Kaiyi Zhen</td><td>8</td></tr><tr><td>Kristina Cairns</td><td>8</td></tr><tr><td>Leo Ivanovic</td><td>8</td></tr><tr><td>Lindsay Sangster</td><td>8</td></tr><tr><td>Mandala Mitton</td><td>8</td></tr><tr><td>Maya Luddu</td><td>8</td></tr><tr><td>Meaghan Farina</td><td>8</td></tr><tr><td>Mia Soparat</td><td>8</td></tr></table></div><div class="section"><h2>Discrepancy Reasons</h2><table><tr><th>Item</th><th>Count</th></tr><tr><td>unexpected_extra_shift</td><td>140</td></tr><tr><td>time_offset</td><td>114</td></tr><tr><td>no_jane_shift_for_staff</td><td>25</td></tr></table></div><div class="section"><h2>Excluded From Comparison</h2><table><tr><th>Item</th><th>Count</th></tr><tr><td>blank_or_stat</td><td>103</td></tr><tr><td>ns</td><td>900</td></tr><tr><td>on_call</td><td>33</td></tr><tr><td>outreach</td><td>169</td></tr></table></div>
+    <div class="section">
+        <h2>Daily Summary</h2>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>Scheduled</th>
+                <th>Jane</th>
+                <th>Matched</th>
+                <th>Missing</th>
+                <th>Extra</th>
+                <th>Name Issues</th>
+            </tr>
+    
+            <tr class="issue">
+                <td>2026-07-20</td>
+                <td>Monday</td>
+                <td>32</td>
+                <td>48</td>
+                <td>29</td>
+                <td>3</td>
+                <td>5</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-21</td>
+                <td>Tuesday</td>
+                <td>32</td>
+                <td>47</td>
+                <td>31</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-22</td>
+                <td>Wednesday</td>
+                <td>26</td>
+                <td>41</td>
+                <td>25</td>
+                <td>1</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-23</td>
+                <td>Thursday</td>
+                <td>25</td>
+                <td>33</td>
+                <td>24</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-24</td>
+                <td>Friday</td>
+                <td>32</td>
+                <td>47</td>
+                <td>29</td>
+                <td>3</td>
+                <td>4</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-25</td>
+                <td>Saturday</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-27</td>
+                <td>Monday</td>
+                <td>32</td>
+                <td>48</td>
+                <td>29</td>
+                <td>3</td>
+                <td>5</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-28</td>
+                <td>Tuesday</td>
+                <td>36</td>
+                <td>37</td>
+                <td>27</td>
+                <td>9</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-29</td>
+                <td>Wednesday</td>
+                <td>27</td>
+                <td>42</td>
+                <td>26</td>
+                <td>1</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="success">
+                <td>2026-07-30</td>
+                <td>Thursday</td>
+                <td>22</td>
+                <td>27</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-07-31</td>
+                <td>Friday</td>
+                <td>31</td>
+                <td>47</td>
+                <td>29</td>
+                <td>2</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-01</td>
+                <td>Saturday</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="success">
+                <td>2026-08-03</td>
+                <td>Monday</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-04</td>
+                <td>Tuesday</td>
+                <td>30</td>
+                <td>43</td>
+                <td>29</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-05</td>
+                <td>Wednesday</td>
+                <td>26</td>
+                <td>40</td>
+                <td>25</td>
+                <td>1</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="success">
+                <td>2026-08-06</td>
+                <td>Thursday</td>
+                <td>22</td>
+                <td>27</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-07</td>
+                <td>Friday</td>
+                <td>32</td>
+                <td>47</td>
+                <td>29</td>
+                <td>3</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-08</td>
+                <td>Saturday</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-10</td>
+                <td>Monday</td>
+                <td>22</td>
+                <td>29</td>
+                <td>20</td>
+                <td>2</td>
+                <td>3</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-11</td>
+                <td>Tuesday</td>
+                <td>27</td>
+                <td>37</td>
+                <td>26</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-12</td>
+                <td>Wednesday</td>
+                <td>21</td>
+                <td>31</td>
+                <td>20</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="success">
+                <td>2026-08-13</td>
+                <td>Thursday</td>
+                <td>22</td>
+                <td>27</td>
+                <td>22</td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-14</td>
+                <td>Friday</td>
+                <td>26</td>
+                <td>40</td>
+                <td>24</td>
+                <td>2</td>
+                <td>2</td>
+                <td>0</td>
+            </tr>
+        
+            <tr class="issue">
+                <td>2026-08-15</td>
+                <td>Saturday</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+                <td>26</td>
+                <td>26</td>
+                <td>0</td>
+            </tr>
+        </table></div><details><summary>2026-07-20 (Monday) - Missing 3, Extra 5, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Gabrielle Williams</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-20T16:00:00-07:00 to 2026-07-20T20:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Matingue Doukoure</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 2 unexpected Jane shifts</td>
+                    <td>2026-07-20T08:45:00-07:00 to 2026-07-20T11:45:00-07:00<br>Δstart=45.0m, Δend=225.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=225.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Avneet Kaur</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Gabrielle Williams</td>
+                    <td>249945</td>
+                    <td class="mono">2026-07-20T16:00:00-07:00</td>
+                    <td class="mono">2026-07-20T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Matingue Doukoure</td>
+                    <td>250185</td>
+                    <td class="mono">2026-07-20T08:45:00-07:00</td>
+                    <td class="mono">2026-07-20T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Matingue Doukoure</td>
+                    <td>250193</td>
+                    <td class="mono">2026-07-20T12:15:00-07:00</td>
+                    <td class="mono">2026-07-20T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Preet Gill</td>
+                    <td>250471</td>
+                    <td class="mono">2026-07-20T08:45:00-07:00</td>
+                    <td class="mono">2026-07-20T11:45:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Preet Gill</td>
+                    <td>250473</td>
+                    <td class="mono">2026-07-20T12:15:00-07:00</td>
+                    <td class="mono">2026-07-20T15:15:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 50, &quot;accepted&quot;: 48, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 29, &quot;on_call&quot;: 2, &quot;outreach&quot;: 16, &quot;included&quot;: 32}</p></details><details><summary>2026-07-21 (Tuesday) - Missing 1, Extra 1, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jessica Griffin</td>
+                    <td>PM3-1</td>
+                    <td class="mono">16:00-20:30</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jess Jaski</td>
+                    <td>250993</td>
+                    <td class="mono">2026-07-21T16:00:00-07:00</td>
+                    <td class="mono">2026-07-21T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 49, &quot;accepted&quot;: 47, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 11, &quot;on_call&quot;: 3, &quot;outreach&quot;: 9, &quot;included&quot;: 32}</p></details><details><summary>2026-07-22 (Wednesday) - Missing 1, Extra 2, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>254245</td>
+                    <td class="mono">2026-07-22T08:45:00-07:00</td>
+                    <td class="mono">2026-07-22T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>254246</td>
+                    <td class="mono">2026-07-22T12:15:00-07:00</td>
+                    <td class="mono">2026-07-22T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 43, &quot;accepted&quot;: 41, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 20, &quot;on_call&quot;: 2, &quot;outreach&quot;: 4, &quot;included&quot;: 26}</p></details><details><summary>2026-07-23 (Thursday) - Missing 1, Extra 1, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Avneet Kaur</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Preet Gill</td>
+                    <td>254027</td>
+                    <td class="mono">2026-07-23T15:30:00-07:00</td>
+                    <td class="mono">2026-07-23T21:00:00-07:00</td>
+                    <td>N/A</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 35, &quot;accepted&quot;: 33, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 15, &quot;on_call&quot;: 2, &quot;outreach&quot;: 10, &quot;included&quot;: 25}</p></details><details><summary>2026-07-24 (Friday) - Missing 3, Extra 4, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Gneis San Juan</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-24T08:30:00-07:00 to 2026-07-24T15:15:00-07:00<br>Δstart=30.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=15.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Katelyn Sperandeo</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-24T16:00:00-07:00 to 2026-07-24T20:45:00-07:00<br>Δstart=30.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=15.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>252419</td>
+                    <td class="mono">2026-07-24T08:45:00-07:00</td>
+                    <td class="mono">2026-07-24T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>252426</td>
+                    <td class="mono">2026-07-24T12:15:00-07:00</td>
+                    <td class="mono">2026-07-24T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Katelyn Sperandeo</td>
+                    <td>252601</td>
+                    <td class="mono">2026-07-24T16:00:00-07:00</td>
+                    <td class="mono">2026-07-24T20:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Gneis San Juan</td>
+                    <td>252673</td>
+                    <td class="mono">2026-07-24T08:30:00-07:00</td>
+                    <td class="mono">2026-07-24T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 49, &quot;accepted&quot;: 47, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 143, &quot;on_call&quot;: 2, &quot;outreach&quot;: 11, &quot;included&quot;: 32}</p></details><details><summary>2026-07-25 (Saturday) - Missing 26, Extra 26, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:45:00-07:00 to 2026-07-25T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:45:00-07:00 to 2026-07-25T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:45:00-07:00 to 2026-07-25T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:45:00-07:00 to 2026-07-25T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:45:00-07:00 to 2026-07-25T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Lam</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:45:00-07:00 to 2026-07-25T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>Sat ADMIN AM</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T08:30:00-07:00 to 2026-07-25T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>Sat ADMIN PM</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-25T12:30:00-07:00 to 2026-07-25T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>249394</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>249555</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>249401</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>249408</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>249415</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>249422</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>249429</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>249436</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>249443</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>249450</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>249457</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>249464</td>
+                    <td class="mono">2026-07-25T12:30:00-07:00</td>
+                    <td class="mono">2026-07-25T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vanessa Lam</td>
+                    <td>249471</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>249478</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>249485</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>249492</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>249499</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>249506</td>
+                    <td class="mono">2026-07-25T08:45:00-07:00</td>
+                    <td class="mono">2026-07-25T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>249513</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>249520</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>249527</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>249534</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>249541</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>249380</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>249548</td>
+                    <td class="mono">2026-07-25T08:30:00-07:00</td>
+                    <td class="mono">2026-07-25T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>249387</td>
+                    <td class="mono">2026-07-25T12:45:00-07:00</td>
+                    <td class="mono">2026-07-25T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 28, &quot;accepted&quot;: 26, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 0, &quot;on_call&quot;: 0, &quot;outreach&quot;: 0, &quot;included&quot;: 26}</p></details><details><summary>2026-07-27 (Monday) - Missing 3, Extra 5, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jessica Botta</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-27T16:00:00-07:00 to 2026-07-27T20:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Manna Lin</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 2 unexpected Jane shifts</td>
+                    <td>2026-07-27T08:45:00-07:00 to 2026-07-27T11:45:00-07:00<br>Δstart=45.0m, Δend=225.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=225.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Avneet Kaur</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jessica Botta</td>
+                    <td>250030</td>
+                    <td class="mono">2026-07-27T16:00:00-07:00</td>
+                    <td class="mono">2026-07-27T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Manna Lin</td>
+                    <td>250141</td>
+                    <td class="mono">2026-07-27T08:45:00-07:00</td>
+                    <td class="mono">2026-07-27T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Manna Lin</td>
+                    <td>250149</td>
+                    <td class="mono">2026-07-27T12:15:00-07:00</td>
+                    <td class="mono">2026-07-27T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Preet Gill</td>
+                    <td>250472</td>
+                    <td class="mono">2026-07-27T08:45:00-07:00</td>
+                    <td class="mono">2026-07-27T11:45:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Preet Gill</td>
+                    <td>250474</td>
+                    <td class="mono">2026-07-27T12:15:00-07:00</td>
+                    <td class="mono">2026-07-27T15:15:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 50, &quot;accepted&quot;: 48, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 29, &quot;on_call&quot;: 2, &quot;outreach&quot;: 16, &quot;included&quot;: 32}</p></details><details><summary>2026-07-28 (Tuesday) - Missing 9, Extra 0, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Edgar Garcia</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Luo</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Hannah Mather</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Isabelle Spindler</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ivan Tong</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Jessica Griffin</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Josh Grant</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Joyce Chen</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Lauren Brosseau</td>
+                    <td>CAD #2</td>
+                    <td class="mono">09:00-13:00</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 39, &quot;accepted&quot;: 37, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 8, &quot;on_call&quot;: 2, &quot;outreach&quot;: 9, &quot;included&quot;: 36}</p></details><details><summary>2026-07-29 (Wednesday) - Missing 1, Extra 2, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>253387</td>
+                    <td class="mono">2026-07-29T08:45:00-07:00</td>
+                    <td class="mono">2026-07-29T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>253389</td>
+                    <td class="mono">2026-07-29T12:15:00-07:00</td>
+                    <td class="mono">2026-07-29T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 44, &quot;accepted&quot;: 42, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 19, &quot;on_call&quot;: 2, &quot;outreach&quot;: 4, &quot;included&quot;: 27}</p></details><details><summary>2026-07-31 (Friday) - Missing 2, Extra 3, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Carolyn MacFarlane</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 2 unexpected Jane shifts</td>
+                    <td>2026-07-31T08:45:00-07:00 to 2026-07-31T11:45:00-07:00<br>Δstart=45.0m, Δend=225.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=225.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Ichin Pan</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-07-31T16:15:00-07:00 to 2026-07-31T20:45:00-07:00<br>Δstart=45.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=15.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Carolyn MacFarlane</td>
+                    <td>252290</td>
+                    <td class="mono">2026-07-31T08:45:00-07:00</td>
+                    <td class="mono">2026-07-31T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Carolyn MacFarlane</td>
+                    <td>252299</td>
+                    <td class="mono">2026-07-31T12:15:00-07:00</td>
+                    <td class="mono">2026-07-31T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ichin Pan</td>
+                    <td>252314</td>
+                    <td class="mono">2026-07-31T16:15:00-07:00</td>
+                    <td class="mono">2026-07-31T20:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 49, &quot;accepted&quot;: 47, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 144, &quot;on_call&quot;: 2, &quot;outreach&quot;: 11, &quot;included&quot;: 31}</p></details><details><summary>2026-08-01 (Saturday) - Missing 26, Extra 26, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:45:00-07:00 to 2026-08-01T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:45:00-07:00 to 2026-08-01T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:45:00-07:00 to 2026-08-01T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:45:00-07:00 to 2026-08-01T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:45:00-07:00 to 2026-08-01T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Lam</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:45:00-07:00 to 2026-08-01T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>Sat ADMIN AM</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T08:30:00-07:00 to 2026-08-01T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>Sat ADMIN PM</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-01T12:30:00-07:00 to 2026-08-01T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>249395</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>249556</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>249402</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>249409</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>249416</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>249423</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>249430</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>249437</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>249444</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>249451</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>249458</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>249465</td>
+                    <td class="mono">2026-08-01T12:30:00-07:00</td>
+                    <td class="mono">2026-08-01T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vanessa Lam</td>
+                    <td>249472</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>249479</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>249486</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>249493</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>249500</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>249507</td>
+                    <td class="mono">2026-08-01T08:45:00-07:00</td>
+                    <td class="mono">2026-08-01T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>249514</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>249521</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>249528</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>249535</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>249542</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>249381</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>249549</td>
+                    <td class="mono">2026-08-01T08:30:00-07:00</td>
+                    <td class="mono">2026-08-01T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>249388</td>
+                    <td class="mono">2026-08-01T12:45:00-07:00</td>
+                    <td class="mono">2026-08-01T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 28, &quot;accepted&quot;: 26, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 0, &quot;on_call&quot;: 0, &quot;outreach&quot;: 0, &quot;included&quot;: 26}</p></details><details><summary>2026-08-04 (Tuesday) - Missing 1, Extra 1, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jessica Griffin</td>
+                    <td>PM3-1</td>
+                    <td class="mono">16:00-20:30</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jess Jaski</td>
+                    <td>250998</td>
+                    <td class="mono">2026-08-04T16:00:00-07:00</td>
+                    <td class="mono">2026-08-04T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 45, &quot;accepted&quot;: 43, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 14, &quot;on_call&quot;: 2, &quot;outreach&quot;: 9, &quot;included&quot;: 30}</p></details><details><summary>2026-08-05 (Wednesday) - Missing 1, Extra 2, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>AM4-2</td>
+                    <td class="mono">08:45-15:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>253388</td>
+                    <td class="mono">2026-08-05T08:45:00-07:00</td>
+                    <td class="mono">2026-08-05T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>253390</td>
+                    <td class="mono">2026-08-05T12:15:00-07:00</td>
+                    <td class="mono">2026-08-05T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 42, &quot;accepted&quot;: 40, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 20, &quot;on_call&quot;: 2, &quot;outreach&quot;: 4, &quot;included&quot;: 26}</p></details><details><summary>2026-08-07 (Friday) - Missing 3, Extra 3, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>PM3-1</td>
+                    <td class="mono">16:00-20:30</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Grace Cheng</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-07T08:30:00-07:00 to 2026-08-07T15:15:00-07:00<br>Δstart=30.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=15.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Laura Parkinson</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-07T16:15:00-07:00 to 2026-08-07T20:45:00-07:00<br>Δstart=45.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=15.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Laura Parkinson</td>
+                    <td>252725</td>
+                    <td class="mono">2026-08-07T16:15:00-07:00</td>
+                    <td class="mono">2026-08-07T20:45:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>252761</td>
+                    <td class="mono">2026-08-07T16:00:00-07:00</td>
+                    <td class="mono">2026-08-07T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Grace Cheng</td>
+                    <td>252774</td>
+                    <td class="mono">2026-08-07T08:30:00-07:00</td>
+                    <td class="mono">2026-08-07T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 49, &quot;accepted&quot;: 47, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 143, &quot;on_call&quot;: 2, &quot;outreach&quot;: 11, &quot;included&quot;: 32}</p></details><details><summary>2026-08-08 (Saturday) - Missing 26, Extra 26, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:45:00-07:00 to 2026-08-08T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:45:00-07:00 to 2026-08-08T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:45:00-07:00 to 2026-08-08T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:45:00-07:00 to 2026-08-08T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:45:00-07:00 to 2026-08-08T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Lam</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:45:00-07:00 to 2026-08-08T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>Sat ADMIN AM</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T08:30:00-07:00 to 2026-08-08T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>Sat ADMIN PM</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-08T12:30:00-07:00 to 2026-08-08T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>249396</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>249557</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>249403</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>249410</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>249417</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>249424</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>249431</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>249438</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>249445</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>249452</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>249459</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>249466</td>
+                    <td class="mono">2026-08-08T12:30:00-07:00</td>
+                    <td class="mono">2026-08-08T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vanessa Lam</td>
+                    <td>249473</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>249480</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>249487</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>249494</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>249501</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>249508</td>
+                    <td class="mono">2026-08-08T08:45:00-07:00</td>
+                    <td class="mono">2026-08-08T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>249515</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>249522</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>249529</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>249536</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>249543</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>249382</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>249550</td>
+                    <td class="mono">2026-08-08T08:30:00-07:00</td>
+                    <td class="mono">2026-08-08T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>249389</td>
+                    <td class="mono">2026-08-08T12:45:00-07:00</td>
+                    <td class="mono">2026-08-08T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 28, &quot;accepted&quot;: 26, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 0, &quot;on_call&quot;: 0, &quot;outreach&quot;: 0, &quot;included&quot;: 26}</p></details><details><summary>2026-08-10 (Monday) - Missing 2, Extra 3, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Elena Alps Mocellin</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-10T16:15:00-07:00 to 2026-08-10T20:45:00-07:00<br>Δstart=45.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=15.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikki Forde</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 2 unexpected Jane shifts</td>
+                    <td>2026-08-10T12:00:00-07:00 to 2026-08-10T15:00:00-07:00<br>Δstart=240.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=240.0m, end=30.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Elena Alps Mocellin</td>
+                    <td>249941</td>
+                    <td class="mono">2026-08-10T16:15:00-07:00</td>
+                    <td class="mono">2026-08-10T20:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikki Forde</td>
+                    <td>250234</td>
+                    <td class="mono">2026-08-10T12:00:00-07:00</td>
+                    <td class="mono">2026-08-10T15:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikki Forde</td>
+                    <td>250242</td>
+                    <td class="mono">2026-08-10T08:30:00-07:00</td>
+                    <td class="mono">2026-08-10T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 31, &quot;accepted&quot;: 29, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 39, &quot;on_call&quot;: 2, &quot;outreach&quot;: 16, &quot;included&quot;: 22}</p></details><details><summary>2026-08-11 (Tuesday) - Missing 1, Extra 1, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jessica Griffin</td>
+                    <td>PM3-1</td>
+                    <td class="mono">16:00-20:30</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Jess Jaski</td>
+                    <td>250999</td>
+                    <td class="mono">2026-08-11T16:00:00-07:00</td>
+                    <td class="mono">2026-08-11T20:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 39, &quot;accepted&quot;: 37, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 17, &quot;on_call&quot;: 2, &quot;outreach&quot;: 9, &quot;included&quot;: 27}</p></details><details><summary>2026-08-12 (Wednesday) - Missing 1, Extra 1, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Wong</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Emily Iaccino</td>
+                    <td>254266</td>
+                    <td class="mono">2026-08-12T08:00:00-07:00</td>
+                    <td class="mono">2026-08-12T15:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 33, &quot;accepted&quot;: 31, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 25, &quot;on_call&quot;: 2, &quot;outreach&quot;: 4, &quot;included&quot;: 21}</p></details><details><summary>2026-08-14 (Friday) - Missing 2, Extra 2, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Sheelove Dol</td>
+                    <td>ADMIN AM</td>
+                    <td class="mono">08:00-15:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-14T08:30:00-07:00 to 2026-08-14T15:15:00-07:00<br>Δstart=30.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=15.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Rabi Ali</td>
+                    <td>ADMIN PM</td>
+                    <td class="mono">15:30-21:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-14T16:15:00-07:00 to 2026-08-14T20:45:00-07:00<br>Δstart=45.0m, Δend=15.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=45.0m, end=15.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Rabi Ali</td>
+                    <td>252740</td>
+                    <td class="mono">2026-08-14T16:15:00-07:00</td>
+                    <td class="mono">2026-08-14T20:45:00-07:00</td>
+                    <td>advanced</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Sheelove Dol</td>
+                    <td>252813</td>
+                    <td class="mono">2026-08-14T08:30:00-07:00</td>
+                    <td class="mono">2026-08-14T15:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 42, &quot;accepted&quot;: 40, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 149, &quot;on_call&quot;: 2, &quot;outreach&quot;: 11, &quot;included&quot;: 26}</p></details><details><summary>2026-08-15 (Saturday) - Missing 26, Extra 26, Name issues 0</summary>
+            <h3>Missing In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Shift Code</th>
+                    <th>Expected Time Blocks</th>
+                    <th>Validation Issues</th>
+                    <th>Nearest Jane Shift</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>Sat PM3-2</td>
+                    <td class="mono">12:15-17:45</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:45:00-07:00 to 2026-08-15T17:15:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>Sat ADMIN PM</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:45:00-07:00 to 2026-08-15T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:45:00-07:00 to 2026-08-15T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:45:00-07:00 to 2026-08-15T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:45:00-07:00 to 2026-08-15T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Lam</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td><strong>no_jane_shift_for_staff</strong><br>No comparable Jane shifts were found for this staff member on this date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>Sat AM2-2</td>
+                    <td class="mono">08:15-12:15</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:45:00-07:00 to 2026-08-15T11:45:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>Sat ADMIN AM</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>Sat AM2-1</td>
+                    <td class="mono">08:00-12:00</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T08:30:00-07:00 to 2026-08-15T11:30:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>Sat PM3-1</td>
+                    <td class="mono">12:00-17:30</td>
+                    <td>Missing 1 expected time blocks; Found 1 unexpected Jane shifts</td>
+                    <td>2026-08-15T12:30:00-07:00 to 2026-08-15T17:00:00-07:00<br>Δstart=30.0m, Δend=30.0m</td>
+                    <td><strong>time_offset</strong><br>Nearest Jane shift is offset by start=30.0m, end=30.0m from expected block</td>
+                </tr>
+                </table>
+            <h3>Extra In Jane</h3>
+            <table>
+                <tr>
+                    <th>Staff</th>
+                    <th>Jane Shift ID</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Tags/Notes</th>
+                    <th>Reason</th>
+                </tr>
+            
+                <tr>
+                    <td>Anthony Aranas</td>
+                    <td>249397</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mia Soparat</td>
+                    <td>249558</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Bryan Hickey</td>
+                    <td>249404</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Caroline Ji</td>
+                    <td>249411</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Celina Pearson</td>
+                    <td>249418</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Chase Kim</td>
+                    <td>249425</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Nikita Heuer</td>
+                    <td>249432</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Sandrine Trop</td>
+                    <td>249439</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Tria Medrano</td>
+                    <td>249446</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vivian Lam</td>
+                    <td>249453</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>William Tanenbaum</td>
+                    <td>249460</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Yusuke Watanabe</td>
+                    <td>249467</td>
+                    <td class="mono">2026-08-15T12:30:00-07:00</td>
+                    <td class="mono">2026-08-15T17:00:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Vanessa Lam</td>
+                    <td>249474</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Derek Bodnaruk</td>
+                    <td>249481</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Emma Fonteyne</td>
+                    <td>249488</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Ezrah Hynes</td>
+                    <td>249495</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Joaquin Arguelles</td>
+                    <td>249502</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kaiyi Zhen</td>
+                    <td>249509</td>
+                    <td class="mono">2026-08-15T08:45:00-07:00</td>
+                    <td class="mono">2026-08-15T11:45:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Kristina Cairns</td>
+                    <td>249516</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Leo Ivanovic</td>
+                    <td>249523</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Lindsay Sangster</td>
+                    <td>249530</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Mandala Mitton</td>
+                    <td>249537</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Maya Luddu</td>
+                    <td>249544</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Angus Pegg</td>
+                    <td>249383</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Meaghan Farina</td>
+                    <td>249551</td>
+                    <td class="mono">2026-08-15T08:30:00-07:00</td>
+                    <td class="mono">2026-08-15T11:30:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                
+                <tr>
+                    <td>Anna Sakamoto</td>
+                    <td>249390</td>
+                    <td class="mono">2026-08-15T12:45:00-07:00</td>
+                    <td class="mono">2026-08-15T17:15:00-07:00</td>
+                    <td>intermediate</td>
+                    <td><strong>unexpected_extra_shift</strong><br>Jane shift had no matching expected Excel time block for the same staff/date</td>
+                </tr>
+                </table><p><strong>Diagnostics:</strong> parse={&quot;raw_records&quot;: 28, &quot;accepted&quot;: 26, &quot;skipped_missing_required&quot;: 0, &quot;skipped_missing_staff&quot;: 0, &quot;skipped_break&quot;: 2, &quot;skipped_patient&quot;: 0, &quot;skipped_parse_error&quot;: 0} | excluded={&quot;blank_or_stat&quot;: 1, &quot;ns&quot;: 0, &quot;on_call&quot;: 0, &quot;outreach&quot;: 0, &quot;included&quot;: 26}</p></details></body></html>

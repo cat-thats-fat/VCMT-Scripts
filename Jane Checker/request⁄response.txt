@@ -1,0 +1,883 @@
+Request:
+Request URL
+https://vcmt.janeapp.com/admin/api/v2/calendar?start_date=2026-06-30&end_date=2026-06-30&location_id=1&include_unscheduled=false&browser_tab_id=3wrldclpa7hi1flpvz1f79
+Request Method
+GET
+Status Code
+304 Not Modified
+Remote Address
+16.52.3.129:443
+Referrer Policy
+strict-origin-when-cross-origin
+
+:authority
+vcmt.janeapp.com
+:method
+GET
+:path
+/admin/api/v2/calendar?start_date=2026-06-30&end_date=2026-06-30&location_id=1&include_unscheduled=false&browser_tab_id=3wrldclpa7hi1flpvz1f79
+:scheme
+https
+accept
+application/json, text/javascript, */*; q=0.01
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+en-GB,en-US;q=0.9,en;q=0.8
+baggage
+sentry-environment=production,sentry-release=v7.2.672,sentry-public_key=0a2411dd501e4441a1f4a27ebdb0b309,sentry-trace_id=7027b330e538438da8826599dae542cf,sentry-org_id=4505290921410560,sentry-sampled=false,sentry-sample_rand=0.9991103613854259,sentry-sample_rate=0
+browser-session-id
+1596-1774983963468
+cookie
+cookies_enabled=true; jane_device=eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaVV4TUdRNE9XVmxOekprWkdVMFlXRTBPVFU1TjJZek5ESXlNMkptWWpjMVl3WTZCa1ZHIiwiZXhwIjoiMjAzNS0wOC0xMVQyMjoxNjowMy40ODhaIiwicHVyIjoiY29va2llLmphbmVfZGV2aWNlIn19--def7315d0df2fc4b3c5b848bf1602e2abb3989d4; _ga=GA1.1.72763896.1754950564; consent-analytics=true; consent-marketing=true; consent-functional=true; consent-preferences=true; rl_anonymous_id=RS_ENC_v3_ImZmNDg5Mzk3LWE0ODQtNGY4YS05MjgxLWUzZmZjMTc5MTI3NiI%3D; rl_page_init_referrer=RS_ENC_v3_IiRkaXJlY3Qi; __stripe_mid=3a2d34b0-054d-4fa9-962f-ea27682cbb96f8cd15; cookies-analytics=true; cookies-functional=true; cookies-marketing=true; cookies-preferences=true; rmb_device_id=eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJa1UxTmpZMFl6QXhPR1UzWTJKbE4yTXlaalpoTW1SbE9ETmpZV0ZqTlRJd1l6TXhNemczWm1NME1tWTFPR00zWm1NMk5UazBaREl4TVRVek5UZ3daakJtQmpvR1JVWT0iLCJleHAiOiIyMDI3LTAzLTIzVDE3OjU5OjQ5LjAyMVoiLCJwdXIiOiJjb29raWUucm1iX2RldmljZV9pZCJ9fQ%3D%3D--2ce7afdfe936bca9833ee9e15273a54d47c16b91; _ga_G9PEQSC6ZV=GS2.1.s1774386475$o3$g0$t1774386475$j60$l0$h1416518614; cookies_enabled=true; rl_user_id=RS_ENC_v3_IjcwOS00NzY3MSI%3D; current_location_id=1; __stripe_sid=270a97fb-fdf1-405f-a545-c5c2efe2d1f74d4a8b; rl_session=RS_ENC_v3_eyJhdXRvVHJhY2siOnRydWUsInRpbWVvdXQiOjE4MDAwMDAsImV4cGlyZXNBdCI6MTc3NDk4NTc1OTY0NiwiaWQiOjE3NzQ5ODI4OTg5NDV9; _dd_s=aid=ab702409-a109-4dcb-8099-fbc91e6ef09c&rum=0&expire=1774984864322&logs=1&id=2b27e85c-1790-49fd-bed3-702187d747d9&created=1774975463111; _front_desk_session=andj%2FZS7VdaE5G%2FSHMRx0CO%2BDyCIZW0GYTyB%2FAWBT235ci%2FWrVfzHjJ3VTGGUOcp7NPKvIIVpVeeABHORORnEV0i41eMtvKJxv1oTTMwQQOcGba7f0%2FA1vMJ2%2FzWlLKT8EOX%2FptlH%2FEVkKVdbWCQrzhQo5s%2B5zrfu4foBURNQ8c5Bgv6uR1j2F6Wnx7VzpVNMkmukpW7NnJUpYwsCfQs3xN%2FNhhnCam7GBfJs%2FgrweTgvzrF3J9FZKo%2BIPcsDvNjcjfD696gfRl9iQSpqrt3Pm30vya31gYIr2orRA9JEFW2U%2F5yoRwvK5U8YY5UzjW3a8yywOrT7FiulilLbjod4HCJbrns7Js6X3LJoU%2BDYjCdoQhwg0z9iRWmCKmaRhTa0hq%2FJ1d%2FZLfPgMvPtyXAxbXNOw8%2FoXg6y5bPjAEDP0uFVRFoqazGDR7NdqRuwPtvOoTJRc3amubBwPGP1WVbl3X%2B55S3ZsNxt26oBghdVGdKMwa%2Fu6CCiHqcWKhzLk3Pce1db00EX0T2F4UYLqiLCxqF8E9PAX0EHnSqr%2Fed9KFezZQxMY0CeRef2RGypQOpwbcePoMqv8mv%2F582%2FFNPLRorBxDOwQobqAR1HPDQ1%2Fxsq1ISY8JYUjnxi4acxs2Dy47Zonf3orqNCILFSnkjhJ2lmYKnVo5Mcod3qLHb8Qm%2Fx2VB2aceLlM0AL78lCbnJgelpl%2FLh5AiaUX9cMbzRwpq2Jm3GSFPzoHg95O3Z0p3--d%2BYJ%2BisIJC0%2Bb5j%2B--3uH70Gj4tr%2F8326gWZI2PA%3D%3D
+if-none-match
+W/"25a4385d0f8adb558e1bfbd35e7913b5"
+priority
+u=1, i
+referer
+https://vcmt.janeapp.com/admin
+sec-ch-ua
+"Not-A.Brand";v="24", "Chromium";v="146"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"Linux"
+sec-fetch-dest
+empty
+sec-fetch-mode
+cors
+sec-fetch-site
+same-origin
+sentry-trace
+7027b330e538438da8826599dae542cf-a4b1a08c35cf29c9-0
+user-agent
+Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36
+x-csrf-token
+BnELwmFJoJuRx9AjXFhdQ0nVFRXpqXJ4OQBKx8KpEovKaqbm979u5mTYjSbDQcTiPzG-czxGv9Eft5-V8acOBQ
+x-jane-version
+v7.2.672
+x-requested-with
+XMLHttpRequest
+
+
+
+
+
+Response:
+
+cache-control
+max-age=0, private, must-revalidate
+
+content-security-policy
+default-src 'none'; base-uri 'self'; child-src 'self'; connect-src 'self' properties https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com wss://*.janeapp.com wss://*.janeapp.co.uk wss://*.janeapp.com.au wss://*.janeapp.net wss://*.id.janeapp.com https://jane.app https://jane.statuspage.io https://icanhazdadjoke.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.g.doubleclick.net https://www.googleadservices.com https://*.googlesyndication.com https://*.googleapis.com https://d3hb14vkzrxvla.cloudfront.net https://beaconapi.helpscout.net https://chatapi.helpscout.net wss://*.pusher.com https://sockjs-helpscout.pusher.com https://edge.fullstory.com/ https://rs.fullstory.com/ https://*.sentry.io https://browser-intake-datadoghq.com/ https://rum.browser-intake-datadoghq.com/ https://logs.browser-intake-datadoghq.com/ https://*.device.stripe-terminal-local-reader.net:4443/protojsonservice/JackRabbitService https://*.stripe.com https://qrcode-monkey.p.rapidapi.com/ https://*.launchdarkly.com/ https://*.commandbar.com/ https://*.google.com https://*.google.com.au https://*.google.ca https://*.google.co.uk https://s3.ca-central-1.amazonaws.com/jane-files-ca/ https://s3-ca-central-1.amazonaws.com/jane-files-ca/ https://s3.ca-west-1.amazonaws.com/jane-files-cw/ https://s3-ca-west-1.amazonaws.com/jane-files-cw/ https://s3.us-west-2.amazonaws.com/jane-files-us/ https://s3-us-west-2.amazonaws.com/jane-files-us/ https://s3.eu-west-2.amazonaws.com/jane-files-gb/ https://s3-eu-west-2.amazonaws.com/jane-files-gb/ https://s3.ap-southeast-2.amazonaws.com/jane-files-au/ https://s3-ap-southeast-2.amazonaws.com/jane-files-au/ jane-files-ca.s3.ca-central-1.amazonaws.com jane-files-cw.s3.ca-west-1.amazonaws.com jane-files-us.s3.us-west-2.amazonaws.com jane-files-gb.s3.eu-west-2.amazonaws.com jane-files-au.s3.ap-southeast-2.amazonaws.com ca-east-data-transfers-1.s3.ca-central-1.amazonaws.com ca-east-data-transfers-2.s3.ca-central-1.amazonaws.com ca-east-data-transfers-3.s3.ca-central-1.amazonaws.com jane-west1-backup.s3.ca-central-1.amazonaws.com jane-patient-recordings-cac1.s3.ca-central-1.amazonaws.com jane-patient-recordings-usw2.s3.us-west-2.amazonaws.com jane-patient-recordings-caw1.s3.ca-west-1.amazonaws.com https://*.hotjar.com https://*.hotjar.io wss://*.hotjar.com https://*.sendbird.com wss://*.sendbird.com https://api.talkdeskapp.com https://*.salsa.dev https://*.clarity.ms https://c.bing.com https://app.enzuzo.com/ https://cdn.rudderlabs.com/; font-src 'self' data: https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com https://fonts.gstatic.com https://*.typekit.net/ https://*.gstatic.com/ https://*.hotjar.com; form-action 'self' auth.janeapp.com https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com https://connect.stripe.com https://*.physitrack.com https://*.mailchimp.com janeapp://*; frame-src 'self' https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com https://*.stripe.com https://player.vimeo.com https://td.doubleclick.net https://www.google.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://*.commandbar.com/ https://talkdeskchatsdk.talkdeskapp.com https://*.salsa.dev https://documentsservice-producti-documentsbucket7df8e0e0-icvxngdgi3e9.s3.us-west-2.amazonaws.com/ https://*.googletagmanager.com; img-src * data: blob: 'unsafe-inline'; manifest-src 'self' https://assets-jane-cac1-12.janeapp.net; media-src 'self' https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com data: blob: jane-files-ca.s3.ca-central-1.amazonaws.com jane-files-cw.s3.ca-west-1.amazonaws.com jane-files-us.s3.us-west-2.amazonaws.com jane-files-gb.s3.eu-west-2.amazonaws.com jane-files-au.s3.ap-southeast-2.amazonaws.com ca-east-data-transfers-1.s3.ca-central-1.amazonaws.com ca-east-data-transfers-2.s3.ca-central-1.amazonaws.com ca-east-data-transfers-3.s3.ca-central-1.amazonaws.com jane-west1-backup.s3.ca-central-1.amazonaws.com jane-patient-recordings-cac1.s3.ca-central-1.amazonaws.com jane-patient-recordings-usw2.s3.us-west-2.amazonaws.com jane-patient-recordings-caw1.s3.ca-west-1.amazonaws.com https://beacon-v2.helpscout.net https://*.gstatic.com/ https://*.commandbar.com/; object-src 'self'; script-src 'self' 'unsafe-inline' https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com https://maps.googleapis.com https://*.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://*.google.com https://www.google.com/ https://www.gstatic.com/ https://*.stripe.com https://*.helpscout.net https://www.datadoghq-browser-agent.com/datadog-logs.js https://fullstory.com/ https://edge.fullstory.com/ https://*.googletagmanager.com https://cdn.rudderlabs.com/ https://*.commandbar.com/ https://*.hotjar.com https://talkdeskchatsdk.talkdeskapp.com https://*.salsa.dev https://*.clarity.ms https://c.bing.com https://app.enzuzo.com/; style-src 'self' 'unsafe-inline' https://*.janeapp.com https://*.janeapp.co.uk https://*.janeapp.com.au https://*.janeapp.net https://*.id.janeapp.com https://fonts.googleapis.com https://fonts.google.com https://beacon-v2.helpscout.net https://*.googletagmanager.com https://www.gstatic.com/ https://*.typekit.net https://*.commandbar.com/ https://*.hotjar.com https://*.salsa.dev; worker-src 'self' blob:; report-uri https://browser-intake-datadoghq.com/api/v2/logs?dd-api-key=pub4deb6dc267201a367e4e6825ffd6c723&dd-evp-origin=content-security-policy&ddsource=csp-report
+date
+Tue, 31 Mar 2026 19:06:04 GMT
+etag
+W/"25a4385d0f8adb558e1bfbd35e7913b5"
+referrer-policy
+origin-when-cross-origin, strict-origin-when-cross-origin
+set-cookie
+_front_desk_session=6Yp%2FKvXQmFfUNe6tYmfvxlJ19Fdwd5yUy00OXcm59z0aZWXGLwx3eu2RkuI68E9sDg2GCPhfi7h3jLvF3pdTAy3FMtnOpQh4NoZsc6AkWbj6uIHChPd7a4Y6GJF8lAYpPHMe7U8cCHU1GGqxG%2B%2BPPagfLOUM6ABksMoEP9XS13np9EzsVLJAn8I3ze1OVR2bOIguf%2F9VAhhMz%2BYZUwSIEB3bUUkaukU5EHUwycWGzbWbcchvw6sWhUq7WxO6M1tSRQlVfCKdpLVZ27nTWGOfd0%2B0jhUfTmbL2CSyoMYkjeV%2F0tWJaOKUpWDyw0XsyMCtfU01FiCzQddscjCCMOuBspa96xQTCB2j9nfljUo2nv2bi8WDpeZ3PtSdbfoLuQwZGbdmrjYAMDxrgPYZIw25LOXJBmkunA60JJziH80XtOqnQ3wDTsaDNy%2FOX3cS1JSMEDRe4uc1L6lqSWLxsVfqyR3PxD6HYQUEMscOrYybZ758RQGQkijolMB6%2FKZh4A6%2BwWjltRP2GhDeSwOTCr91CsbA6iFW3e9LeXFkRKoX%2BmAVBEVyPU3is2BnK9fy4mtdRCuCpQVeGpvzJqa6KBbpsyr0%2Fk4%2Bqy4WM1Ms9cE85%2Fw2NTTxPIHXK1TVWXahEOQS%2FZhFfVnjI0sviTVpyRr26djJYErtBQ7ymFv0KeI6rFL%2F3fk0qNpou%2BEtfEkoCwQltuRP2NfYjXNan%2FBj0VcJOzZypSskwd0dUVNvHuNB92V%2F--v5qn%2BwmqI22D2Hea--vD5hUkR8f0%2FOAG6SlVxumw%3D%3D; path=/; expires=Wed, 31 Mar 2027 19:06:04 GMT; HttpOnly; secure; SameSite=Lax
+strict-transport-security
+max-age=31556952; includeSubDomains
+x-content-type-options
+nosniff
+x-frame-options
+SAMEORIGIN
+x-jane-version
+{"current":"7.2.672","unobtrusive":"7.1.1154","immediate":"7.1.751","minimum":"4.18.252"}
+x-jane-version-compatibility
+"latest"
+x-request-id
+8b136ff0-f9dc-428b-815a-2a4ed069a345
+x-robots-tag
+all
+x-runtime
+0.111659
+x-token-janews
+eyJhbGciOiJIUzI1NiJ9.eyJndWlkIjo3MDksInN0YWZmX21lbWJlcl9pZCI6MTU5NiwiZXhwIjoxNzc0OTg0MjY0LCJjaGFubmVsIjoic2NoZWR1bGUifQ.Px6TMwBINcRCyTeeLXspv0XllV2Isr7vQYXz2tGaAkI
+x-xss-protection
+1; mode=block
+
+{
+    "staff_member_ids": [
+        1673,
+        1685,
+        1682,
+        1684,
+        1590,
+        1695,
+        1592,
+        1674,
+        1692,
+        1696,
+        1697,
+        1671,
+        1676,
+        1680,
+        1686,
+        1690,
+        1691,
+        1694,
+        1672,
+        1646,
+        1649,
+        1651,
+        1662,
+        1660,
+        1653,
+        1656,
+        1657,
+        1664,
+        1644,
+        1650,
+        1642,
+        1648
+    ],
+    "appointments": [
+        {
+            "id": 568727,
+            "location_id": 1,
+            "room_id": null,
+            "resource_ids": [],
+            "start_at": "2026-06-30T15:30:00-07:00",
+            "end_at": "2026-06-30T21:00:00-07:00",
+            "patient_id": null,
+            "primary_patient_id": null,
+            "staff_member_id": 1673,
+            "staff_member_name": "Ata Ojani",
+            "treatment_id": null,
+            "archived_at": null,
+            "no_show_at": null,
+            "cancelled_at": null,
+            "booked_at": "2026-03-26T14:58:59-07:00",
+            "break": true,
+            "state": "break",
+            "additional_states": [],
+            "arrived_at": null,
+            "checked_in_at": null,
+            "patient_name": " ",
+            "patient_is_primary": false,
+            "primary_patient_name": " ",
+            "patient": {
+                "prefix": null,
+                "first_name": null,
+                "preferred_first_name": null,
+                "last_name": null,
+                "dob": null
+            },
+            "primary_patient": {
+                "prefix": null,
+                "first_name": null,
+                "preferred_first_name": null,
+                "last_name": null,
+                "dob": null
+            },
+            "patient_video_session_state": null,
+            "treatment_name": null,
+            "color": null,
+            "capacity": null,
+            "class_booking": false,
+            "parent_appointment_id": null,
+            "participant_count": 0,
+            "arrived_participant_count": 0,
+            "purchase_id": null,
+            "sale_id": null,
+            "purchased": false,
+            "purchase_state": null,
+            "patient_paid": false,
+            "has_notes": true,
+            "notes_text": "Admin PM",
+            "first_visit": false,
+            "insurance_state": null,
+            "updated_at": "2026-03-26T14:58:59-07:00",
+            "chart_status": "none",
+            "reschedulable": true,
+            "order_id": null,
+            "order_item_id": null,
+            "pass": {
+                "quantity_interval": null
+            },
+            "pass_id": null,
+            "package_id": null,
+            "membership_id": null,
+            "child_appointment_ids": [],
+            "original_appointment_id": null,
+            "rescheduled": false,
+            "cancelled": false,
+            "online_only": null,
+            "wait_list_block": false,
+            "booking_type": null,
+            "group_booking": false,
+            "treatment_add_ons": [],
+            "referral_source": "JANE",
+            "booking_source": "admin"
+        },
+        {
+            "id": 568730,
+            "location_id": 1,
+            "room_id": null,
+            "resource_ids": [],
+            "start_at": "2026-06-30T08:00:00-07:00",
+            "end_at": "2026-06-30T15:30:00-07:00",
+            "patient_id": null,
+            "primary_patient_id": null,
+            "staff_member_id": 1685,
+            "staff_member_name": "Josh Grant",
+            "treatment_id": null,
+            "archived_at": null,
+            "no_show_at": null,
+            "cancelled_at": null,
+            "booked_at": "2026-03-26T15:13:12-07:00",
+            "break": true,
+            "state": "break",
+            "additional_states": [],
+            "arrived_at": null,
+            "checked_in_at": null,
+            "patient_name": " ",
+            "patient_is_primary": false,
+            "primary_patient_name": " ",
+            "patient": {
+                "prefix": null,
+                "first_name": null,
+                "preferred_first_name": null,
+                "last_name": null,
+                "dob": null
+            },
+            "primary_patient": {
+                "prefix": null,
+                "first_name": null,
+                "preferred_first_name": null,
+                "last_name": null,
+                "dob": null
+            },
+            "patient_video_session_state": null,
+            "treatment_name": null,
+            "color": null,
+            "capacity": null,
+            "class_booking": false,
+            "parent_appointment_id": null,
+            "participant_count": 0,
+            "arrived_participant_count": 0,
+            "purchase_id": null,
+            "sale_id": null,
+            "purchased": false,
+            "purchase_state": null,
+            "patient_paid": false,
+            "has_notes": true,
+            "notes_text": "Admin AM",
+            "first_visit": false,
+            "insurance_state": null,
+            "updated_at": "2026-03-26T15:13:12-07:00",
+            "chart_status": "none",
+            "reschedulable": true,
+            "order_id": null,
+            "order_item_id": null,
+            "pass": {
+                "quantity_interval": null
+            },
+            "pass_id": null,
+            "package_id": null,
+            "membership_id": null,
+            "child_appointment_ids": [],
+            "original_appointment_id": null,
+            "rescheduled": false,
+            "cancelled": false,
+            "online_only": null,
+            "wait_list_block": false,
+            "booking_type": null,
+            "group_booking": false,
+            "treatment_add_ons": [],
+            "referral_source": "JANE",
+            "booking_source": "admin"
+        }
+    ],
+    "shifts": [
+        {
+            "id": 250673,
+            "start_at": "2026-06-30T16:00:00-07:00",
+            "end_at": "2026-06-30T20:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1682,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T12:36:17-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250705,
+            "start_at": "2026-06-30T08:45:00-07:00",
+            "end_at": "2026-06-30T11:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1684,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T13:08:52-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250709,
+            "start_at": "2026-06-30T12:15:00-07:00",
+            "end_at": "2026-06-30T15:15:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1684,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T13:09:02-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250721,
+            "start_at": "2026-06-30T16:00:00-07:00",
+            "end_at": "2026-06-30T20:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1590,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T13:40:29-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250726,
+            "start_at": "2026-06-30T16:15:00-07:00",
+            "end_at": "2026-06-30T20:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1695,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:02:19-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250747,
+            "start_at": "2026-06-30T16:00:00-07:00",
+            "end_at": "2026-06-30T20:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1592,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:22:32-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250750,
+            "start_at": "2026-06-30T08:45:00-07:00",
+            "end_at": "2026-06-30T11:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1674,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:26:02-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250756,
+            "start_at": "2026-06-30T12:15:00-07:00",
+            "end_at": "2026-06-30T15:15:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1674,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:27:17-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250762,
+            "start_at": "2026-06-30T08:45:00-07:00",
+            "end_at": "2026-06-30T11:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1692,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:32:31-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250765,
+            "start_at": "2026-06-30T12:15:00-07:00",
+            "end_at": "2026-06-30T15:15:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1692,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:32:47-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250771,
+            "start_at": "2026-06-30T08:45:00-07:00",
+            "end_at": "2026-06-30T11:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1696,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:33:44-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250774,
+            "start_at": "2026-06-30T12:15:00-07:00",
+            "end_at": "2026-06-30T15:15:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1696,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:33:58-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250777,
+            "start_at": "2026-06-30T08:30:00-07:00",
+            "end_at": "2026-06-30T11:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1697,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:34:34-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250780,
+            "start_at": "2026-06-30T12:00:00-07:00",
+            "end_at": "2026-06-30T15:00:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1697,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:34:46-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250808,
+            "start_at": "2026-06-30T16:15:00-07:00",
+            "end_at": "2026-06-30T20:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1671,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": false,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T14:58:00-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250820,
+            "start_at": "2026-06-30T15:30:00-07:00",
+            "end_at": "2026-06-30T21:00:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1673,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": false,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 1,
+            "updated_at": "2026-03-26T14:58:55-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": []
+        },
+        {
+            "id": 250821,
+            "start_at": "2026-06-30T08:30:00-07:00",
+            "end_at": "2026-06-30T11:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1676,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-21",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:11:12-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250825,
+            "start_at": "2026-06-30T12:00:00-07:00",
+            "end_at": "2026-06-30T15:00:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1676,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-21",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:11:27-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250835,
+            "start_at": "2026-06-30T16:15:00-07:00",
+            "end_at": "2026-06-30T20:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1680,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:12:37-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250836,
+            "start_at": "2026-06-30T08:00:00-07:00",
+            "end_at": "2026-06-30T15:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1685,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": false,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 1,
+            "updated_at": "2026-03-26T15:13:08-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": []
+        },
+        {
+            "id": 250837,
+            "start_at": "2026-06-30T08:45:00-07:00",
+            "end_at": "2026-06-30T11:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1686,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": false,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 1,
+            "updated_at": "2026-03-26T15:14:31-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250838,
+            "start_at": "2026-06-30T12:15:00-07:00",
+            "end_at": "2026-06-30T15:15:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1686,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": false,
+            "repeat_until": "2026-06-30",
+            "repeat_frequency": 1,
+            "updated_at": "2026-03-26T15:14:38-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250846,
+            "start_at": "2026-06-30T16:00:00-07:00",
+            "end_at": "2026-06-30T20:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1690,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:25:45-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250866,
+            "start_at": "2026-06-30T08:30:00-07:00",
+            "end_at": "2026-06-30T11:30:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1691,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:31:15-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250868,
+            "start_at": "2026-06-30T12:00:00-07:00",
+            "end_at": "2026-06-30T15:00:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1691,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:31:28-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
+        {
+            "id": 250870,
+            "start_at": "2026-06-30T16:15:00-07:00",
+            "end_at": "2026-06-30T20:45:00-07:00",
+            "location_id": 1,
+            "room_id": null,
+            "room_name": null,
+            "staff_member_id": 1694,
+            "call_to_book": false,
+            "notes": null,
+            "part_of_series": true,
+            "repeat_until": "2026-07-07",
+            "repeat_frequency": 7,
+            "updated_at": "2026-03-26T15:33:59-07:00",
+            "book_online": true,
+            "reschedulable": true,
+            "tags": [
+                {
+                    "id": 24,
+                    "name": "intermediate"
+                }
+            ]
+        },
