@@ -3,7 +3,10 @@
   const DEFAULT_TIMEOUT_MS = 20000;
   const POLL_INTERVAL_MS = 150;
 
-  // Set this to true for advanced mode, false for intermediate mode.
+  // Mode switches:
+  // - Set USE_HYBRID_MODE = true to force all treatments enabled.
+  // - If USE_HYBRID_MODE is false, USE_ADVANCED_MODE selects advanced (true) or intermediate (false).
+  const USE_HYBRID_MODE = false;
   const USE_ADVANCED_MODE = false;
 
   // Treatments that must remain disabled for each mode.
@@ -119,15 +122,29 @@
     };
   }
 
-  function getDisabledTreatmentsForMode() {
-    return USE_ADVANCED_MODE
-      ? ADVANCED_MODE_DISABLED_TREATMENTS
-      : INTERMEDIATE_MODE_DISABLED_TREATMENTS;
+  function getModeConfig() {
+    if (USE_HYBRID_MODE) {
+      return {
+        modeLabel: "hybrid",
+        disabledTreatments: []
+      };
+    }
+
+    if (USE_ADVANCED_MODE) {
+      return {
+        modeLabel: "advanced",
+        disabledTreatments: ADVANCED_MODE_DISABLED_TREATMENTS
+      };
+    }
+
+    return {
+      modeLabel: "intermediate",
+      disabledTreatments: INTERMEDIATE_MODE_DISABLED_TREATMENTS
+    };
   }
 
   async function applyModeTreatmentToggles() {
-    const disabledTreatments = getDisabledTreatmentsForMode();
-    const modeLabel = USE_ADVANCED_MODE ? "advanced" : "intermediate";
+    const { modeLabel, disabledTreatments } = getModeConfig();
     console.log(`${LOG_PREFIX} Applying ${modeLabel} mode treatment toggles...`);
     console.log(`${LOG_PREFIX} Treatments to keep disabled:`, disabledTreatments);
     
