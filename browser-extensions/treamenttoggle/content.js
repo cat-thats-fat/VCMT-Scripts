@@ -1,31 +1,49 @@
 (() => {
-  const LOG_PREFIX = "[IntermediateToggle]";
+  const LOG_PREFIX = "[TreamentToggle]";
   const DEFAULT_TIMEOUT_MS = 20000;
   const POLL_INTERVAL_MS = 150;
 
-  // Mode switches:
-  // - Set USE_HYBRID_MODE = true to force all treatments enabled.
-  // - If USE_HYBRID_MODE is false, USE_ADVANCED_MODE selects advanced (true) or intermediate (false).
-  const USE_HYBRID_MODE = false;
-  const USE_ADVANCED_MODE = false;
+  // ─── Active mode ─────────────────────────────────────────────────────────────
+  // Change this to the key of whichever mode you want to run.
+  // Must match a key defined in MODES below.
+  const ACTIVE_MODE = "intermediate";
 
-  // Treatments that must remain disabled for each mode.
-  const INTERMEDIATE_MODE_DISABLED_TREATMENTS = [
-    "Surrey student - Prebook Free",
-    "ADVANCED MASSAGE",
-    "PREGNANCY MASSAGE"
-  ];
-
-  const ADVANCED_MODE_DISABLED_TREATMENTS = [
-    "Surrey student - Prebook Free",
-    "INTERMEDIATE MASSAGE",
-    "Intermediate Massage (ORIENTATION)"
-  ];
+  // ─── Mode definitions ─────────────────────────────────────────────────────────
+  // Each mode has a list of treatments that must remain DISABLED.
+  // An empty disabledTreatments array means all treatments are enabled (hybrid-style).
+  //
+  // To add a new mode, append a new entry:
+  //   mymode: {
+  //     label: "mymode",
+  //     disabledTreatments: ["Treatment Name One", "Treatment Name Two"]
+  //   }
+  const MODES = {
+    intermediate: {
+      label: "intermediate",
+      disabledTreatments: [
+        "Surrey student - Prebook Free",
+        "ADVANCED MASSAGE",
+        "PREGNANCY MASSAGE"
+      ]
+    },
+    advanced: {
+      label: "advanced",
+      disabledTreatments: [
+        "Surrey student - Prebook Free",
+        "INTERMEDIATE MASSAGE",
+        "Intermediate Massage (ORIENTATION)"
+      ]
+    },
+    hybrid: {
+      label: "hybrid",
+      disabledTreatments: [] // All treatments enabled
+    }
+  };
 
   let isRunning = false;
 
   chrome.runtime.onMessage.addListener((message) => {
-    if (message?.type !== "RUN_INTERMEDIATE_TOGGLE") return;
+    if (message?.type !== "RUN_TREAMENT_TOGGLE") return;
 
     run().catch((error) => {
       console.error(`${LOG_PREFIX} Automation failed:`, error);
@@ -50,7 +68,7 @@
 
     isRunning = true;
     console.log(`${LOG_PREFIX} Starting automation...`);
-    
+
     // Safety timeout - reset flag after 2 minutes max
     const safetyTimeout = setTimeout(() => {
       if (isRunning) {
@@ -89,14 +107,14 @@
       const nextId = staffId + 1;
       const nextUrl = `${baseUrl}#staff/${nextId}/treatments`;
       console.log(`${LOG_PREFIX} Moving to next staff: ${nextId}. URL: ${nextUrl}`);
-      
+
       // Navigate directly to the next staff treatments page
       window.location.assign(nextUrl);
       console.log(`${LOG_PREFIX} Successfully completed staff ${staffId} and moved to ${nextId}`);
-      
+
       // Wait a bit before resetting flag to prevent race condition during navigation
       await wait(1000);
-      
+
       // Reset running state after successful completion
       isRunning = false;
       clearTimeout(safetyTimeout);
@@ -123,23 +141,15 @@
   }
 
   function getModeConfig() {
-    if (USE_HYBRID_MODE) {
-      return {
-        modeLabel: "hybrid",
-        disabledTreatments: []
-      };
+    const mode = MODES[ACTIVE_MODE];
+    if (!mode) {
+      throw new Error(
+        `Unknown mode "${ACTIVE_MODE}". Available modes: ${Object.keys(MODES).join(", ")}`
+      );
     }
-
-    if (USE_ADVANCED_MODE) {
-      return {
-        modeLabel: "advanced",
-        disabledTreatments: ADVANCED_MODE_DISABLED_TREATMENTS
-      };
-    }
-
     return {
-      modeLabel: "intermediate",
-      disabledTreatments: INTERMEDIATE_MODE_DISABLED_TREATMENTS
+      modeLabel: mode.label,
+      disabledTreatments: mode.disabledTreatments
     };
   }
 
@@ -147,7 +157,7 @@
     const { modeLabel, disabledTreatments } = getModeConfig();
     console.log(`${LOG_PREFIX} Applying ${modeLabel} mode treatment toggles...`);
     console.log(`${LOG_PREFIX} Treatments to keep disabled:`, disabledTreatments);
-    
+
     // Wait for treatment list to load
     await waitFor(() => {
       const treatmentItems = document.querySelectorAll('.list-group-item');
@@ -164,7 +174,7 @@
     for (const treatmentItem of treatmentItems) {
       const treatmentText = treatmentItem.textContent?.trim() || '';
       const normalizedTreatmentText = normalizeText(treatmentText);
-      
+
       const shouldDisable = disabledTreatments.some(targetTreatment =>
         normalizedTreatmentText.includes(normalizeText(targetTreatment))
       );
