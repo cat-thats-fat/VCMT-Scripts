@@ -37,6 +37,10 @@
     hybrid: {
       label: "hybrid",
       disabledTreatments: [] // All treatments enabled
+    },
+    surrey: {
+      label: "surrey",
+      disabledTreatments: [] // All treatments enabled
     }
   };
 
