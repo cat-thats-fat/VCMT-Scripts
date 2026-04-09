@@ -9,14 +9,24 @@
   const ACTIVE_MODE = "intermediate";
 
   // ─── Mode definitions ─────────────────────────────────────────────────────────
-  // Each mode has a list of treatments that must remain DISABLED.
-  // An empty disabledTreatments array means all treatments are enabled (hybrid-style).
+  // Each mode uses EITHER disabledTreatments OR enabledTreatments — never both.
   //
-  // To add a new mode, append a new entry:
-  //   mymode: {
-  //     label: "mymode",
-  //     disabledTreatments: ["Treatment Name One", "Treatment Name Two"]
-  //   }
+  //   disabledTreatments  →  enable everything EXCEPT the listed treatments.
+  //   enabledTreatments   →  disable everything EXCEPT the listed treatments.
+  //
+  // To add a new mode, append a new entry with one of the two list types:
+  //
+  //   blocklist style (disable specific treatments):
+  //     mymode: {
+  //       label: "mymode",
+  //       disabledTreatments: ["Treatment Name One", "Treatment Name Two"]
+  //     }
+  //
+  //   allowlist style (enable only specific treatments, disable everything else):
+  //     mymode: {
+  //       label: "mymode",
+  //       enabledTreatments: ["Treatment Name One"]
+  //     }
   const MODES = {
     intermediate: {
       label: "intermediate",
@@ -147,16 +157,37 @@
         `Unknown mode "${ACTIVE_MODE}". Available modes: ${Object.keys(MODES).join(", ")}`
       );
     }
+
+    const hasBlocklist = "disabledTreatments" in mode;
+    const hasAllowlist = "enabledTreatments" in mode;
+
+    if (hasBlocklist && hasAllowlist) {
+      throw new Error(
+        `Mode "${ACTIVE_MODE}" defines both disabledTreatments and enabledTreatments — use only one.`
+      );
+    }
+    if (!hasBlocklist && !hasAllowlist) {
+      throw new Error(
+        `Mode "${ACTIVE_MODE}" must define either disabledTreatments or enabledTreatments.`
+      );
+    }
+
     return {
       modeLabel: mode.label,
-      disabledTreatments: mode.disabledTreatments
+      // "blocklist" → enable all except listed; "allowlist" → disable all except listed
+      strategy: hasAllowlist ? "allowlist" : "blocklist",
+      treatments: hasAllowlist ? mode.enabledTreatments : mode.disabledTreatments
     };
   }
 
   async function applyModeTreatmentToggles() {
-    const { modeLabel, disabledTreatments } = getModeConfig();
-    console.log(`${LOG_PREFIX} Applying ${modeLabel} mode treatment toggles...`);
-    console.log(`${LOG_PREFIX} Treatments to keep disabled:`, disabledTreatments);
+    const { modeLabel, strategy, treatments } = getModeConfig();
+    console.log(`${LOG_PREFIX} Applying ${modeLabel} mode (${strategy})...`);
+    if (strategy === "allowlist") {
+      console.log(`${LOG_PREFIX} Treatments to keep enabled (all others disabled):`, treatments);
+    } else {
+      console.log(`${LOG_PREFIX} Treatments to keep disabled (all others enabled):`, treatments);
+    }
 
     // Wait for treatment list to load
     await waitFor(() => {
@@ -175,16 +206,17 @@
       const treatmentText = treatmentItem.textContent?.trim() || '';
       const normalizedTreatmentText = normalizeText(treatmentText);
 
-      const shouldDisable = disabledTreatments.some(targetTreatment =>
-        normalizedTreatmentText.includes(normalizeText(targetTreatment))
+      const matchesList = treatments.some(t =>
+        normalizedTreatmentText.includes(normalizeText(t))
       );
-      const shouldEnable = !shouldDisable;
+      // allowlist: enable only matches; blocklist: enable everything except matches
+      const shouldEnable = strategy === "allowlist" ? matchesList : !matchesList;
 
       // Look for the toggle button within this treatment item
       const toggleBtnOn = treatmentItem.querySelector('.toggle-btn.on');
       const toggleBtnOff = treatmentItem.querySelector('.toggle-btn.off, .toggle-btn:not(.on)');
 
-      if (shouldDisable && toggleBtnOn) {
+      if (!shouldEnable && toggleBtnOn) {
         console.log(`${LOG_PREFIX} Toggling off: "${treatmentText}"`);
         clickElement(toggleBtnOn);
         toggledOffCount++;
