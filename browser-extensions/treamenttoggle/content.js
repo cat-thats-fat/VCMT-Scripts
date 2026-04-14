@@ -6,7 +6,7 @@
   // ─── Active mode ─────────────────────────────────────────────────────────────
   // Change this to the key of whichever mode you want to run.
   // Must match a key defined in MODES below.
-  const ACTIVE_MODE = "intermediate";
+  const ACTIVE_MODE = "surrey";
 
   // ─── Mode definitions ─────────────────────────────────────────────────────────
   // Each mode uses EITHER disabledTreatments OR enabledTreatments — never both.
@@ -50,7 +50,7 @@
     },
     surrey: {
       label: "surrey",
-      disabledTreatments: [] // All treatments enabled
+      enabledTreatments: ["SURREY INTRODUCTORY INTERMEDIATE MASSAGE"] // All treatments enabled
     }
   };
 
