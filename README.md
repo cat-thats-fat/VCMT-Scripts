@@ -290,6 +290,8 @@ This script provides a simple interactive console menu for downloading quiz repo
 - Creates a quiz report (`student_analysis` or `item_analysis`).
 - Polls until Canvas has generated the report file.
 - Downloads the report file into `./downloads`.
+- Pulls every quiz submission via the Quiz Submissions API and stores each submission payload as JSON.
+- Attempts to download attachment files referenced by each submission payload.
 
 ### File
 - `canvas_quiz_downloader.py`
@@ -313,5 +315,7 @@ python canvas_quiz_downloader.py
 - `GET /api/v1/courses/:course_id/quizzes`
 - `POST /api/v1/courses/:course_id/quizzes/:quiz_id/reports`
 - `GET /api/v1/courses/:course_id/quizzes/:quiz_id/reports/:id`
-- File download via returned file URL.
+- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/submissions`
+- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/submissions/:id`
+- File download via returned file URL(s).
 

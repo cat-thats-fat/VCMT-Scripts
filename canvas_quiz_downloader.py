@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""Interactive Canvas quiz report downloader.
+"""Interactive Canvas quiz downloader.
 
-Workflow:
-1. Lists active courses (used as "cohorts").
-2. Lets you pick a course.
-3. Lists most recent quizzes for that course.
-4. Creates a quiz report and polls until Canvas generates a downloadable file.
-5. Downloads report into ./downloads.
+What this tool can download for a selected quiz:
+1) Quiz report CSV (student_analysis or item_analysis)
+2) Per-student quiz submission JSON snapshots
+3) Any attachment files referenced on each submission payload
 
 Environment variables:
 - CANVAS_BASE_URL (example: https://school.instructure.com)
@@ -18,14 +16,13 @@ from __future__ import annotations
 import json
 import os
 import re
-import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import parse_qs, urlencode, urljoin, urlparse
+from urllib.parse import urlencode, urljoin
 from urllib.request import Request, urlopen
 
 
@@ -42,12 +39,14 @@ class CanvasClient:
         self.api_token = config.api_token
         self.timeout_seconds = config.timeout_seconds
 
-    def _headers(self) -> dict[str, str]:
-        return {
+    def _headers(self, *, include_content_type: bool = True) -> dict[str, str]:
+        headers = {
             "Authorization": f"Bearer {self.api_token}",
             "Accept": "application/json",
-            "Content-Type": "application/x-www-form-urlencoded",
         }
+        if include_content_type:
+            headers["Content-Type"] = "application/x-www-form-urlencoded"
+        return headers
 
     def _request(
         self,
@@ -55,6 +54,7 @@ class CanvasClient:
         path_or_url: str,
         params: dict[str, Any] | None = None,
         data: dict[str, Any] | None = None,
+        *,
         absolute_url: bool = False,
     ) -> tuple[Any, dict[str, str]]:
         if absolute_url:
@@ -64,29 +64,28 @@ class CanvasClient:
 
         if params:
             encoded_params = urlencode(params, doseq=True)
-            separator = "&" if "?" in url else "?"
-            url = f"{url}{separator}{encoded_params}"
+            url = f"{url}{'&' if '?' in url else '?'}{encoded_params}"
 
-        payload = None
-        if data is not None:
-            payload = urlencode(data, doseq=True).encode("utf-8")
+        payload = urlencode(data, doseq=True).encode("utf-8") if data else None
 
         request = Request(url=url, method=method.upper(), headers=self._headers(), data=payload)
 
         try:
             with urlopen(request, timeout=self.timeout_seconds) as response:
-                body = response.read().decode("utf-8")
+                raw = response.read()
                 headers = {k: v for k, v in response.headers.items()}
-                if not body:
+                if not raw:
                     return None, headers
-                return json.loads(body), headers
+                text = raw.decode("utf-8")
+                return json.loads(text), headers
         except HTTPError as exc:
             details = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"Canvas API HTTP {exc.code} on {url}: {details}") from exc
         except URLError as exc:
             raise RuntimeError(f"Unable to connect to Canvas ({url}): {exc.reason}") from exc
 
-    def _get_next_page_url(self, link_header: str | None) -> str | None:
+    @staticmethod
+    def _next_link(link_header: str | None) -> str | None:
         if not link_header:
             return None
         for part in link_header.split(","):
@@ -96,33 +95,39 @@ class CanvasClient:
                     return match.group(1)
         return None
 
-    def _paginated_get(self, path: str, params: dict[str, Any] | None = None) -> list[dict[str, Any]]:
-        all_items: list[dict[str, Any]] = []
-        response, headers = self._request("GET", path, params=params)
+    def _extract_items(self, response: Any, item_key: str | None = None) -> list[dict[str, Any]]:
         if isinstance(response, list):
-            all_items.extend(response)
-        elif isinstance(response, dict):
-            # Some endpoints nest results.
+            return [item for item in response if isinstance(item, dict)]
+        if isinstance(response, dict):
+            if item_key and isinstance(response.get(item_key), list):
+                return [item for item in response[item_key] if isinstance(item, dict)]
             for value in response.values():
                 if isinstance(value, list):
-                    all_items.extend(value)
+                    return [item for item in value if isinstance(item, dict)]
+        return []
 
-        next_url = self._get_next_page_url(headers.get("Link"))
+    def _paginated_get(
+        self,
+        path: str,
+        params: dict[str, Any] | None = None,
+        *,
+        item_key: str | None = None,
+    ) -> list[dict[str, Any]]:
+        items: list[dict[str, Any]] = []
+        response, headers = self._request("GET", path, params=params)
+        items.extend(self._extract_items(response, item_key=item_key))
+
+        next_url = self._next_link(headers.get("Link"))
         while next_url:
             response, headers = self._request("GET", next_url, absolute_url=True)
-            if isinstance(response, list):
-                all_items.extend(response)
-            next_url = self._get_next_page_url(headers.get("Link"))
-
-        return all_items
+            items.extend(self._extract_items(response, item_key=item_key))
+            next_url = self._next_link(headers.get("Link"))
+        return items
 
     def list_active_courses(self) -> list[dict[str, Any]]:
         return self._paginated_get(
             "/api/v1/courses",
-            params={
-                "enrollment_state": "active",
-                "per_page": 100,
-            },
+            params={"enrollment_state": "active", "per_page": 100},
         )
 
     def list_quizzes(self, course_id: int) -> list[dict[str, Any]]:
@@ -131,7 +136,24 @@ class CanvasClient:
             params={"per_page": 100},
         )
 
-    def create_quiz_report(self, course_id: int, quiz_id: int, report_type: str = "student_analysis") -> dict[str, Any]:
+    def list_quiz_submissions(self, course_id: int, quiz_id: int) -> list[dict[str, Any]]:
+        return self._paginated_get(
+            f"/api/v1/courses/{course_id}/quizzes/{quiz_id}/submissions",
+            params={"include[]": ["user", "submission"], "per_page": 100},
+            item_key="quiz_submissions",
+        )
+
+    def get_quiz_submission(self, course_id: int, quiz_id: int, submission_id: int) -> dict[str, Any]:
+        submission, _ = self._request(
+            "GET",
+            f"/api/v1/courses/{course_id}/quizzes/{quiz_id}/submissions/{submission_id}",
+            params={"include[]": ["user", "submission"]},
+        )
+        if not isinstance(submission, dict):
+            raise RuntimeError(f"Unexpected payload for submission {submission_id}.")
+        return submission
+
+    def create_quiz_report(self, course_id: int, quiz_id: int, report_type: str) -> dict[str, Any]:
         report, _ = self._request(
             "POST",
             f"/api/v1/courses/{course_id}/quizzes/{quiz_id}/reports",
@@ -141,7 +163,7 @@ class CanvasClient:
             },
         )
         if not isinstance(report, dict):
-            raise RuntimeError("Unexpected Canvas response while creating report.")
+            raise RuntimeError("Unexpected Canvas response while creating quiz report.")
         return report
 
     def get_quiz_report(self, course_id: int, quiz_id: int, report_id: int) -> dict[str, Any]:
@@ -150,16 +172,34 @@ class CanvasClient:
             f"/api/v1/courses/{course_id}/quizzes/{quiz_id}/reports/{report_id}",
         )
         if not isinstance(report, dict):
-            raise RuntimeError("Unexpected Canvas response while getting report.")
+            raise RuntimeError("Unexpected Canvas response while fetching quiz report.")
         return report
 
-    def download_file(self, download_url: str, destination: Path) -> None:
-        request = Request(download_url, method="GET", headers={"Authorization": f"Bearer {self.api_token}"})
+    def download_binary(self, url: str, destination: Path) -> None:
+        request = Request(url, method="GET", headers=self._headers(include_content_type=False))
         with urlopen(request, timeout=self.timeout_seconds) as response:
             destination.write_bytes(response.read())
 
 
-def prompt_selection(items: list[dict[str, Any]], title_fn, subtitle_fn) -> dict[str, Any]:
+def iso_to_local(raw: str | None) -> str:
+    if not raw:
+        return "(no date)"
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return raw
+    return dt.strftime("%Y-%m-%d %H:%M")
+
+
+def sanitize_filename(name: str) -> str:
+    return re.sub(r"[^a-zA-Z0-9._-]+", "_", name).strip("._") or "unnamed"
+
+
+def prompt_selection(
+    items: list[dict[str, Any]],
+    title_fn,
+    subtitle_fn,
+) -> dict[str, Any]:
     for idx, item in enumerate(items, start=1):
         print(f"[{idx}] {title_fn(item)}")
         subtitle = subtitle_fn(item)
@@ -169,32 +209,21 @@ def prompt_selection(items: list[dict[str, Any]], title_fn, subtitle_fn) -> dict
     while True:
         raw = input("\nEnter selection number: ").strip()
         if raw.isdigit():
-            choice = int(raw)
-            if 1 <= choice <= len(items):
-                return items[choice - 1]
+            chosen_idx = int(raw)
+            if 1 <= chosen_idx <= len(items):
+                return items[chosen_idx - 1]
         print("Invalid selection. Try again.")
 
 
-def iso_to_local(dt_str: str | None) -> str:
-    if not dt_str:
-        return "(no date)"
-    try:
-        dt = datetime.fromisoformat(dt_str.replace("Z", "+00:00"))
-        return dt.strftime("%Y-%m-%d %H:%M")
-    except ValueError:
-        return dt_str
-
-
-def sanitize_filename(name: str) -> str:
-    return re.sub(r"[^a-zA-Z0-9._-]+", "_", name).strip("_") or "quiz_report"
-
-
 def choose_course(courses: list[dict[str, Any]]) -> dict[str, Any]:
-    active_named = [c for c in courses if c.get("name")]
-    active_named.sort(key=lambda c: c.get("name", "").lower())
-    print("\nAvailable cohorts (active Canvas courses):")
+    named = [course for course in courses if course.get("name")]
+    named.sort(key=lambda c: str(c.get("name", "")).lower())
+    if not named:
+        raise RuntimeError("No active named courses found.")
+
+    print("\nAvailable cohorts (active courses):")
     return prompt_selection(
-        active_named,
+        named,
         title_fn=lambda c: f"{c.get('name')} (ID: {c.get('id')})",
         subtitle_fn=lambda c: c.get("course_code", ""),
     )
@@ -204,18 +233,129 @@ def choose_quiz(quizzes: list[dict[str, Any]]) -> dict[str, Any]:
     if not quizzes:
         raise RuntimeError("No quizzes found for this course.")
 
-    def sort_key(quiz: dict[str, Any]) -> str:
-        return quiz.get("due_at") or quiz.get("unlock_at") or quiz.get("updated_at") or ""
+    def date_key(q: dict[str, Any]) -> str:
+        return str(q.get("due_at") or q.get("unlock_at") or q.get("updated_at") or "")
 
-    sorted_quizzes = sorted(quizzes, key=sort_key, reverse=True)
-    latest = sorted_quizzes[:20]
-
-    print("\nMost recent quizzes (showing up to 20):")
+    recent = sorted(quizzes, key=date_key, reverse=True)[:20]
+    print("\nMost recent quizzes (up to 20):")
     return prompt_selection(
-        latest,
+        recent,
         title_fn=lambda q: f"{q.get('title', 'Untitled Quiz')} (ID: {q.get('id')})",
         subtitle_fn=lambda q: f"due: {iso_to_local(q.get('due_at'))} | updated: {iso_to_local(q.get('updated_at'))}",
     )
+
+
+def wait_for_report_file(client: CanvasClient, course_id: int, quiz_id: int, report: dict[str, Any]) -> dict[str, Any]:
+    report_id = int(report["id"])
+    deadline = time.time() + (5 * 60)
+
+    while not report.get("file"):
+        if time.time() > deadline:
+            raise RuntimeError("Timed out waiting for report generation.")
+        time.sleep(2)
+        report = client.get_quiz_report(course_id=course_id, quiz_id=quiz_id, report_id=report_id)
+        print(f"Still generating report... progress_url={report.get('progress_url') or '(none)'}")
+
+    return report
+
+
+def download_report(
+    client: CanvasClient,
+    course_id: int,
+    quiz: dict[str, Any],
+    destination_root: Path,
+) -> Path:
+    quiz_id = int(quiz["id"])
+    report_type = input("Report type [student_analysis/item_analysis] (default: student_analysis): ").strip() or "student_analysis"
+    if report_type not in {"student_analysis", "item_analysis"}:
+        raise RuntimeError("Invalid report type; use student_analysis or item_analysis.")
+
+    print("\nCreating quiz report...")
+    report = client.create_quiz_report(course_id=course_id, quiz_id=quiz_id, report_type=report_type)
+    print(f"Report requested (id={report.get('id')}).")
+    report = wait_for_report_file(client, course_id=course_id, quiz_id=quiz_id, report=report)
+
+    file_obj = report.get("file") or {}
+    file_url = file_obj.get("url")
+    if not file_url:
+        raise RuntimeError("Report completed but no file URL was returned.")
+
+    filename = file_obj.get("filename") or f"{sanitize_filename(quiz.get('title', f'quiz_{quiz_id}'))}_{report_type}.csv"
+    report_path = destination_root / sanitize_filename(filename)
+    client.download_binary(file_url, report_path)
+    print(f"Downloaded report: {report_path}")
+    return report_path
+
+
+def collect_submission_attachments(submission_payload: dict[str, Any]) -> list[dict[str, Any]]:
+    attachments: list[dict[str, Any]] = []
+
+    # Common placement in included submission object.
+    nested_submission = submission_payload.get("submission")
+    if isinstance(nested_submission, dict):
+        nested_attachments = nested_submission.get("attachments")
+        if isinstance(nested_attachments, list):
+            attachments.extend([a for a in nested_attachments if isinstance(a, dict)])
+
+    # Fallback if Canvas returns attachments at top-level.
+    top_level = submission_payload.get("attachments")
+    if isinstance(top_level, list):
+        attachments.extend([a for a in top_level if isinstance(a, dict)])
+
+    # Deduplicate by attachment id/url.
+    deduped: dict[str, dict[str, Any]] = {}
+    for item in attachments:
+        key = str(item.get("id") or item.get("url") or item.get("filename") or len(deduped))
+        deduped[key] = item
+    return list(deduped.values())
+
+
+def download_all_submission_data(
+    client: CanvasClient,
+    course_id: int,
+    quiz: dict[str, Any],
+    destination_root: Path,
+) -> tuple[int, int]:
+    quiz_id = int(quiz["id"])
+    submissions = client.list_quiz_submissions(course_id=course_id, quiz_id=quiz_id)
+    if not submissions:
+        print("No quiz submissions returned for this quiz.")
+        return 0, 0
+
+    submission_dir = destination_root / "submissions"
+    files_dir = destination_root / "submission_files"
+    submission_dir.mkdir(parents=True, exist_ok=True)
+    files_dir.mkdir(parents=True, exist_ok=True)
+
+    downloaded_files = 0
+    for s in submissions:
+        submission_id = s.get("id")
+        if submission_id is None:
+            continue
+
+        details = client.get_quiz_submission(course_id=course_id, quiz_id=quiz_id, submission_id=int(submission_id))
+
+        user_id = details.get("user_id") or s.get("user_id") or "unknown_user"
+        attempt = details.get("attempt") or s.get("attempt") or "attempt"
+        state = (details.get("workflow_state") or s.get("workflow_state") or "unknown").lower()
+
+        snapshot_name = f"user_{user_id}_submission_{submission_id}_attempt_{attempt}_{state}.json"
+        snapshot_path = submission_dir / sanitize_filename(snapshot_name)
+        snapshot_path.write_text(json.dumps(details, indent=2, ensure_ascii=False), encoding="utf-8")
+
+        for attachment in collect_submission_attachments(details):
+            url = attachment.get("url")
+            if not url:
+                continue
+            filename = sanitize_filename(str(attachment.get("filename") or f"attachment_{attachment.get('id', 'file')}"))
+            output_path = files_dir / f"user_{user_id}_{filename}"
+            try:
+                client.download_binary(url=url, destination=output_path)
+                downloaded_files += 1
+            except Exception as exc:  # best-effort for attachment downloads
+                print(f"Warning: failed to download attachment for submission {submission_id}: {exc}")
+
+    return len(submissions), downloaded_files
 
 
 def main() -> int:
@@ -233,55 +373,32 @@ def main() -> int:
 
     client = CanvasClient(CanvasConfig(base_url=base_url, api_token=api_token))
 
-    print("\nFetching active cohorts/courses from Canvas...")
-    courses = client.list_active_courses()
-    if not courses:
-        raise RuntimeError("No active courses found for this account.")
-
-    course = choose_course(courses)
+    print("\nFetching active cohorts/courses...")
+    course = choose_course(client.list_active_courses())
     course_id = int(course["id"])
 
     print(f"\nFetching quizzes for course {course_id}...")
-    quizzes = client.list_quizzes(course_id)
-    quiz = choose_quiz(quizzes)
-    quiz_id = int(quiz["id"])
+    quiz = choose_quiz(client.list_quizzes(course_id))
 
-    report_type = input("Report type [student_analysis/item_analysis] (default: student_analysis): ").strip() or "student_analysis"
-    if report_type not in {"student_analysis", "item_analysis"}:
-        raise RuntimeError("Invalid report type. Must be student_analysis or item_analysis.")
+    folder_name = sanitize_filename(f"course_{course_id}_{quiz.get('id')}_{quiz.get('title', 'quiz')}")
+    destination_root = Path("downloads") / folder_name
+    destination_root.mkdir(parents=True, exist_ok=True)
 
-    print("\nCreating quiz report...")
-    report = client.create_quiz_report(course_id=course_id, quiz_id=quiz_id, report_type=report_type)
-    report_id = int(report["id"])
-    print(f"Report created with ID {report_id}. Polling until file is ready...")
+    report_path = download_report(client=client, course_id=course_id, quiz=quiz, destination_root=destination_root)
 
-    poll_seconds = 2
-    deadline = time.time() + 60 * 5
-    file_obj = report.get("file")
+    print("\nDownloading each student submission payload (and any attachments)...")
+    submission_count, attachment_count = download_all_submission_data(
+        client=client,
+        course_id=course_id,
+        quiz=quiz,
+        destination_root=destination_root,
+    )
 
-    while not file_obj:
-        if time.time() > deadline:
-            raise RuntimeError("Timed out waiting for quiz report generation.")
-        time.sleep(poll_seconds)
-        report = client.get_quiz_report(course_id=course_id, quiz_id=quiz_id, report_id=report_id)
-        file_obj = report.get("file")
-        progress = report.get("progress_url", "")
-        print(f"Still generating... progress endpoint: {progress or '(none)'}")
-
-    download_url = file_obj.get("url")
-    if not download_url:
-        raise RuntimeError("Report completed but no file URL was returned.")
-
-    downloads_dir = Path("downloads")
-    downloads_dir.mkdir(parents=True, exist_ok=True)
-
-    quiz_name = sanitize_filename(quiz.get("title", f"quiz_{quiz_id}"))
-    default_name = file_obj.get("filename") or f"{quiz_name}_{report_type}.csv"
-    output_path = downloads_dir / default_name
-
-    print(f"\nDownloading report to: {output_path}")
-    client.download_file(download_url=download_url, destination=output_path)
-    print(f"Done. Saved: {output_path.resolve()}")
+    print("\nDone.")
+    print(f"Report: {report_path.resolve()}")
+    print(f"Submission snapshots saved: {submission_count}")
+    print(f"Attachment files downloaded: {attachment_count}")
+    print(f"Output folder: {destination_root.resolve()}")
     return 0
 
 
@@ -291,6 +408,6 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\nCancelled.")
         raise SystemExit(130)
-    except Exception as exc:  # keep CLI errors friendly
+    except Exception as exc:
         print(f"Error: {exc}")
         raise SystemExit(1)
