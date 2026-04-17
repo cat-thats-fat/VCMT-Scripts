@@ -277,3 +277,41 @@ The script generates an HTML report that:
 - Some scripts depend on current third-party site behavior and may require updates over time
 - Use care with any automation that clicks buttons or saves changes automatically
 - Review outputs before relying on them for final administrative decisions
+
+
+## Canvas Quiz Report Downloader
+
+This script provides a simple interactive console menu for downloading quiz reports from Canvas into a local `downloads` folder.
+
+### What it does
+- Lists active Canvas courses (used as cohorts).
+- Lets you choose one course.
+- Lists the most recent quizzes for that course.
+- Creates a quiz report (`student_analysis` or `item_analysis`).
+- Polls until Canvas has generated the report file.
+- Downloads the report file into `./downloads`.
+
+### File
+- `canvas_quiz_downloader.py`
+
+### Setup
+1. Create a Canvas API token with access to your course quizzes/reports.
+2. Set environment variables:
+
+```bash
+export CANVAS_BASE_URL="https://YOUR-SCHOOL.instructure.com"
+export CANVAS_API_TOKEN="YOUR_TOKEN"
+```
+
+### Run
+```bash
+python canvas_quiz_downloader.py
+```
+
+### Canvas API flow used
+- `GET /api/v1/courses` (active courses)
+- `GET /api/v1/courses/:course_id/quizzes`
+- `POST /api/v1/courses/:course_id/quizzes/:quiz_id/reports`
+- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/reports/:id`
+- File download via returned file URL.
+
