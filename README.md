@@ -278,65 +278,21 @@ The script generates an HTML report that:
 - Use care with any automation that clicks buttons or saves changes automatically
 - Review outputs before relying on them for final administrative decisions
 
-
 ## Canvas Quiz Downloader
 
-This script provides a simple interactive console menu for downloading quiz reports and student submission artifacts from Canvas. Output is saved under `canvas_quiz_downloader/downloads`.
+The Canvas quiz downloader now lives in its own folder so merge conflicts are less likely:
+- `canvas_quiz_downloader/main.py` (main CLI)
+- `canvas_quiz_downloader.py` (compat launcher)
+- `canvas_quiz_downloader/.env.example` (config template)
 
-### What it does
-- Lists active Canvas courses (used as cohorts).
-- Lets you choose one course.
-- Lists the most recent quizzes for that course.
-- Creates a quiz report (`student_analysis` or `item_analysis`).
-- Polls until Canvas has generated the report file.
-- Downloads the report file into `./downloads`.
-- Pulls every quiz submission via the Quiz Submissions API and stores each submission payload as JSON.
-- Attempts to download attachment files referenced by each submission payload.
-
-### File
-- `canvas_quiz_downloader/main.py` (primary script)
-- `canvas_quiz_downloader.py` (backward-compatible launcher)
-- `canvas_quiz_downloader/.env.example`
-
-### Setup
-1. Create a Canvas API token with access to your course quizzes/reports.
-2. Configure credentials using either environment variables **or** a `.env` file.
-
-Option A (shell env):
-
-```bash
-export CANVAS_BASE_URL="https://YOUR-SCHOOL.instructure.com"
-export CANVAS_API_TOKEN="YOUR_TOKEN"
-```
-
-Option B (`.env`):
-
+Quick start:
 ```bash
 cp canvas_quiz_downloader/.env.example canvas_quiz_downloader/.env
-# then edit values in canvas_quiz_downloader/.env
-```
-
-### Run
-```bash
-python3 canvas_quiz_downloader.py
-# or
-python3 canvas_quiz_downloader/main.py
-
-# verbose debugging logs
+# edit CANVAS_BASE_URL and CANVAS_API_TOKEN
 python3 canvas_quiz_downloader.py --debug
 ```
 
-### Canvas API flow used
-- `GET /api/v1/courses` (active courses)
-- `GET /api/v1/courses/:course_id/quizzes`
-- `POST /api/v1/courses/:course_id/quizzes/:quiz_id/reports`
-- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/reports/:id`
-- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/submissions`
-- `GET /api/v1/courses/:course_id/quizzes/:quiz_id/submissions/:id`
-- File download via returned file URL(s).
-
-
-### Troubleshooting (401 Invalid access token)
-- Make sure `CANVAS_API_TOKEN` is set to a valid active Canvas token.
-- If you run `export` without setting variables first, nothing is configured for the script.
-- Use `--debug` to see exactly which `.env` files were read and whether a token was detected (masked).
+For full behavior, see inline help:
+```bash
+python3 canvas_quiz_downloader.py --help
+```
